@@ -1,0 +1,95 @@
+{
+  "name": "@studiokloek/vite-config",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "Martijn Swart <opensource@studiokloek.nl> (https://studiokloek.nl)",
+  "description": "Base Vite config for usage in our projects.",
+  "homepage": "https://github.com/studiokloek/vite-config/tree/main/#readme",
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "kloek-development": "./bin/development.js",
+    "kloek-build": "./bin/build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/studiokloek/vite-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/studiokloek/vite-config/issues"
+  },
+  "scripts": {
+    "dev": "rimraf dist && pnpm run build-bundle -w",
+    "build": "rimraf dist && run-s build-bundle build-types",
+    "build-bundle": "rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
+    "build-types": "run-s build-types-temp build-types-roll",
+    "build-types-temp": "tsc --project tsconfig.types.json",
+    "build-types-roll": "api-extractor run && rimraf tmp/types"
+  },
+  "engines": {
+    "node": ">=14.6.0"
+  },
+  "np": {
+    "yarn": false,
+    "tests": false
+  },
+  "files": [
+    "/dist",
+    "/bin"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "xo": {
+    "prettier": true,
+    "rules": {
+      "import/extensions": [
+        1,
+        {
+          "ts": "never"
+        }
+      ],
+      "node/prefer-global/process": [
+        "error",
+        "always"
+      ]
+    }
+  },
+  "dependencies": {
+    "@sveltejs/kit": "^1.0.0-next.350",
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.49",
+    "@vitejs/plugin-legacy": "^1.8.2",
+    "autoprefixer": "^10.4.7",
+    "node-sass": "^7.0.1",
+    "sass": "~1.52.3",
+    "svelte": "^3.48.0",
+    "vite": "v2.9.12",
+    "vite-plugin-banner": "^0.3.0",
+    "vite-plugin-full-reload": "^1.0.0",
+    "vite-plugin-handlebars": "^1.6.0",
+    "vite-plugin-html": "3.2.0",
+    "vite-plugin-imagemin": "studiokloek/vite-plugin-imagemin#tmp-release",
+    "vite-plugin-live-reload": "^2.1.0",
+    "vite-tsconfig-paths": "^3.5.0"
+  },
+  "devDependencies": {
+    "@microsoft/api-extractor": "^7.25.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-typescript": "^8.3.3",
+    "@types/ejs": "^3.1.1",
+    "@types/html-minifier-terser": "^6.1.0",
+    "@types/node": "^17.0.43",
+    "np": "^7.6.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.7.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.75.6",
+    "typescript": "^4.7.3",
+    "xo": "^0.50.0"
+  }
+}
