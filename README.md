@@ -1,30 +1,16 @@
-# sounds-packer
-Packs sounds for using in our current project setup. Right now built for internal use, maybe usefull for the world later...
+# vite-config
+Externalize our vitejs config setup, so we can use it in multiple projects. Right now built for internal use, maybe useful for the world later...
 
 # Installation
 ```
-npm i @studiokloek/sounds-packer --save-dev
+npm i @studiokloek/vite-config --save-dev
 ```
 
 # Usage
-Create a `asset.json` file in the root of your project, like the one below:
-
 ```
-{
-  "sounds": {
-    "sourceDirectory" : "./assets/sounds", 
-    "targetDirectory" : "./converted/sounds/",
-    "scriptDirectory" : "./script/app/sounds/",
-    "watch" : true,
-    "watchDelay" : 2000,
-    "directories": [
-      "scenes",
-      "world/player",
-      "hud"
-    ]
-  }
-}
+npm run kloek-development
+npm run kloek-build --empty-output-dir --base "https://example.com/test" 
 ```
 
 # Under development
-This module is currently under development and not ready for production.
+This module is currently under development and may not be ready for production.
