@@ -35,6 +35,8 @@ export function defineBuildConfig(options: ViteOptions): BuildOptions {
               }
             }
           }
+
+          return undefined;
         },
       },
     },
