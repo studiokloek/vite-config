@@ -79,6 +79,7 @@
     "vite-tsconfig-paths": "^3.5.0"
   },
   "devDependencies": {
+    "@types/node": "^17.0.45",
     "@microsoft/api-extractor": "^7.28.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-typescript": "^8.3.3",
@@ -93,7 +94,6 @@
     "typescript": "^4.7.4",
     "xo": "^0.50.0"
   },
-  "peerDependencies": {},
   "resolutions": {
     "@types/node": "^17.0.45",
     "vite": "v2.9.13"
