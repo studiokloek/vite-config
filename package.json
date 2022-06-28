@@ -93,9 +93,5 @@
     "rollup": "^2.75.7",
     "typescript": "^4.7.4",
     "xo": "^0.50.0"
-  },
-  "resolutions": {
-    "@types/node": "^17.0.45",
-    "vite": "v2.9.13"
   }
 }
