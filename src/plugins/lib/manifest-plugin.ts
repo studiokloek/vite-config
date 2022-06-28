@@ -1,5 +1,10 @@
 import {Plugin, ResolvedConfig} from 'vite';
-import {GameSettings, GamesSettings} from '../../utils/interfaces';
+import {
+  GameSettings,
+  GamesSettings,
+  KloekViteBuildConfig,
+  KloekViteConfig,
+} from '../../utils/interfaces';
 
 function renderGameManifest(
   pageId: string,

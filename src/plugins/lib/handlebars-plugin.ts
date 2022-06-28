@@ -1,7 +1,7 @@
 import os from 'node:os';
 import path from 'node:path';
 import {Plugin} from 'vite';
-import handlebarsPlugin2 from 'vite-plugin-handlebars';
+import viteHandlebarsPlugin from 'vite-plugin-handlebars';
 import {ViteOptions} from '../../utils/interfaces';
 import {getPageIdFromUrl} from '../../utils';
 
@@ -10,7 +10,7 @@ export function handlebarsPlugin(
   partialDirectory: string | string[],
   options: ViteOptions,
 ): Plugin {
-  return handlebarsPlugin2({
+  return viteHandlebarsPlugin({
     partialDirectory,
 
     helpers: {

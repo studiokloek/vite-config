@@ -5,21 +5,28 @@ export interface ImageQualityConfig {
   png: [number, number];
 }
 
-export interface KloekViteConfig {
-  dev: {
-    serveParams: string;
-  };
-  serve: {
-    partials: string | string[];
-  };
-  build: {
-    basePath: string;
-    legacy?: boolean;
-    browserslist?: string | string[];
-    imageQuality: ImageQualityConfig;
-  };
+export interface KloekViteDevConfig {
+  serveParams: string;
 }
 
+export interface KloekViteServeConfig {
+  partials: string | string[];
+}
+
+export interface KloekViteBuildConfig {
+  basePath: string;
+  legacy?: boolean;
+  browserslist?: string | string[];
+  imageQuality: ImageQualityConfig;
+  azureSWA?: boolean;
+  manifest?: boolean;
+}
+
+export interface KloekViteConfig {
+  dev: KloekViteDevConfig;
+  serve: KloekViteServeConfig;
+  build: KloekViteBuildConfig;
+}
 export type GameSettingsProperty = 'info' | 'meta' | 'options';
 
 export interface GameSettings {

@@ -2,7 +2,7 @@ import legacyPlugin from '@vitejs/plugin-legacy';
 import {Plugin} from 'vite';
 import bannerPlugin from 'vite-plugin-banner';
 import {createHtmlPlugin} from 'vite-plugin-html';
-import {ViteOptions} from "../utils/interfaces";
+import {ViteOptions} from '../utils/interfaces';
 import {imageminPlugin} from './lib/image-plugin';
 import {manifestPlugin} from './lib/manifest-plugin';
 
@@ -15,7 +15,7 @@ export function buildPlugins(options: ViteOptions): Plugin[] {
 
   const plugins: Plugin[] = [];
 
-  if (options.config.build.legacy === true) {
+  if (options.config.build.legacy) {
     // Make sure the page works in older browsers
     plugins.push(
       legacyPlugin({
@@ -58,9 +58,12 @@ export function buildPlugins(options: ViteOptions): Plugin[] {
 
     `,
     ),
-
-    manifestPlugin(options.settings.games),
   );
+
+  // Create a manifest and minimal webworker for every game
+  if (options.config.build.manifest) {
+    plugins.push(manifestPlugin(options.settings.games));
+  }
 
   return plugins;
 }
