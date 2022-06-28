@@ -6,7 +6,7 @@ import {
   GamesSettingsData,
   KloekViteConfig,
   PackageGamesSettings,
-} from "./interfaces";
+} from './interfaces';
 
 function mergeGameSettings(
   generic: GameSettings,
@@ -43,8 +43,8 @@ export function parsePackageGamesSettings(
     const settings = mergeGameSettings(generic, game, infoTypes);
 
     // Zorg er voor dat page altijd gezet is
-    const pageId = settings.info.page ?? settings.info.id ?? 'unknown';
-    settings.info.page = settings.info.id;
+    const pageId = settings.info.id ?? 'unknown';
+    settings.info.page = settings.info.page ?? pageId;
 
     // Sla settings op onder page id
     allSettings.games[pageId] = settings;
