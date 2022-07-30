@@ -14,7 +14,6 @@ export function defineBuildConfig(options: ViteOptions): BuildOptions {
 
   return {
     reportCompressedSize: false,
-    brotliSize: false,
     chunkSizeWarningLimit: 1000,
     outDir: '../public',
     assetsDir: 'generated',
