@@ -1,5 +1,5 @@
-// import os from 'node:os';
-// import path from 'node:path';
+import os from 'os';
+import path from 'path';
 import {Plugin} from 'vite';
 import viteHandlebarsPlugin from 'vite-plugin-handlebars';
 import {ViteOptions} from '../../utils/interfaces';
@@ -20,12 +20,12 @@ export function handlebarsPlugin(
       eq: (a: any, b: any) => a === b,
       neq: (a: any, b: any) => a !== b,
       isdefined: (value: undefined) => value !== undefined,
-      // 'resolve-root'(p: string) {
-      //   // Tijdelijke hack voor bug in handlebars plugin
-      //   // zie ook https://github.com/alexlafroscia/vite-plugin-handlebars/pull/129
-      //   const resolvedPath = path.resolve(options.root, p);
-      //   return os.platform() === 'win32' ? `/${resolvedPath}` : resolvedPath;
-      // },
+      'resolve-root'(p: string) {
+        // Tijdelijke hack voor bug in handlebars plugin
+        // zie ook https://github.com/alexlafroscia/vite-plugin-handlebars/pull/129
+        const resolvedPath = path.resolve(options.root, p);
+        return os.platform() === 'win32' ? `/${resolvedPath}` : resolvedPath;
+      },
     },
 
     context(pagePath: string): Record<string, unknown> {
