@@ -19,7 +19,7 @@ export function buildPlugins(options: ViteOptions): Plugin[] {
     // Make sure the page works in older browsers
     plugins.push(
       ...legacyPlugin({
-        targets: (options.config.build.browserslist as string[]) ?? [],
+        targets: (options.config.build.browserslist as string[]) ?? 'defaults',
       }),
     );
   }
