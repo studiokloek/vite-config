@@ -51,10 +51,6 @@ export async function defineKloekViteConfig(
     publicDir: 'static',
     define: {},
 
-    // OptimizeDeps: {
-    //   exclude: ['@studiokloek/ts-core-lib'],
-    // },
-
     esbuild: {
       legalComments: 'none',
     },

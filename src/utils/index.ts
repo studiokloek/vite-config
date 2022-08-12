@@ -1,4 +1,5 @@
 import {readFileSync} from 'node:fs';
+import process from 'node:process';
 import {normalizePath} from 'vite';
 
 export function readJSON(path: string): unknown {
