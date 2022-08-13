@@ -25,7 +25,7 @@
   },
   "scripts": {
     "dev": "run-s build/clean build/watch",
-    "build": "run-s build/clean build/bundle build/types",
+    "build": "run-s build/clean build/bundle types",
     "build/clean": "rimraf dist",
     "build/watch": "yarn build/bundle -w",
     "build/bundle": "rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
