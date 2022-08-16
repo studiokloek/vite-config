@@ -67,10 +67,10 @@
   },
   "dependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.0.1",
-    "@typescript-eslint/eslint-plugin": "^5.33.0",
-    "@typescript-eslint/parser": "^5.33.0",
+    "@typescript-eslint/eslint-plugin": "^5.33.1",
+    "@typescript-eslint/parser": "^5.33.1",
     "@vitejs/plugin-legacy": "^2.0.1",
-    "eslint": "^8.21.0",
+    "eslint": "^8.22.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-formatter-pretty": "^4.1.0",
     "eslint-import-resolver-typescript": "^3.4.1",
@@ -90,7 +90,7 @@
     "sass": "^1.54.4",
     "svelte": "^3.49.0",
     "terser": "^5.14.2",
-    "vite": "v3.0.6",
+    "vite": "v3.0.8",
     "vite-plugin-banner": "^0.3.0",
     "vite-plugin-full-reload": "^1.0.4",
     "vite-plugin-handlebars": "naranjamecanica/vite-plugin-handlebars#tmp-release",
@@ -103,18 +103,19 @@
     "@microsoft/api-extractor": "^7.29.2",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-typescript": "^8.3.4",
-    "@sveltejs/kit": "^1.0.0-next.405",
+    "@sveltejs/kit": "^1.0.0-next.410",
     "@types/ejs": "^3.1.1",
-    "@types/html-minifier-terser": "^6.1.0",
+    "@types/html-minifier-terser": "^7.0.0",
     "@types/node": "^16.11.48",
     "np": "^7.6.2",
     "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
-    "rollup": "^2.77.3",
+    "rollup": "^2.78.0",
     "typescript": "^4.7.4",
     "xo": "^0.51.0"
   },
   "resolutions": {
-    "@types/node": "^16.11.48"
+    "@types/node": "^16.11.48",
+    "vite": "v3.0.8"
   }
 }
