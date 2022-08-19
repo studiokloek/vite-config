@@ -10,7 +10,6 @@ export async function kloekDevelopment(): Promise<void> {
 
   const server = await createServer({
     configFile: false,
-    envFile: false,
     ...config,
   });
 
@@ -52,7 +51,6 @@ export async function kloekBuild(
 
   await build({
     configFile: false,
-    envFile: false,
     ...config,
   });
 }
