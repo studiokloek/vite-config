@@ -3,6 +3,7 @@ import {svelte} from '@sveltejs/vite-plugin-svelte';
 import {Plugin} from 'vite';
 import fullReload from 'vite-plugin-full-reload';
 import tsconfigPathsPlugin from 'vite-tsconfig-paths';
+import basicSSL from '@vitejs/plugin-basic-ssl';
 import {ViteOptions} from '../utils/interfaces';
 import {cwd} from '../utils';
 import {handlebarsPlugin} from './lib/handlebars-plugin';
@@ -33,5 +34,7 @@ export function servePlugins(options: ViteOptions): Plugin[] {
     }) as Plugin,
 
     handlebarsPlugin(options.config.serve.partials, options),
+
+    basicSSL(),
   ];
 }
