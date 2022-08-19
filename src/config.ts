@@ -79,10 +79,7 @@ export async function defineKloekViteConfig(
     case 'serve':
       config.server = {
         host: 'localhost',
-        https: {
-          key: readFileSync(path.resolve(cwd, 'cert', 'key.pem')),
-          cert: readFileSync(path.resolve(cwd, 'cert', 'cert.pem')),
-        },
+        https: true,
         open: getPageToServe(options.config, options.settings.games),
       };
 
