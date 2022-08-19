@@ -78,6 +78,7 @@ export async function defineKloekViteConfig(
   switch (environment.command) {
     case 'serve':
       config.server = {
+        host: 'localhost',
         https: {
           key: readFileSync(path.resolve(cwd, 'cert', 'key.pem')),
           cert: readFileSync(path.resolve(cwd, 'cert', 'cert.pem')),
