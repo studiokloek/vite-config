@@ -47,6 +47,8 @@ export async function defineKloekViteConfig(
     logLevel: 'info',
     base: kloekConfig.build.basePath,
     root: options.root,
+    envDir: path.resolve(cwd, 'env'),
+    envPrefix: ['KLOEK_', 'VITE_'],
     publicDir: 'static',
     define: {},
 
