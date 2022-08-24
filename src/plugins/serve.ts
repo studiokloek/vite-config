@@ -8,6 +8,7 @@ import {ViteOptions} from '../utils/interfaces';
 import {cwd} from '../utils';
 import {handlebarsPlugin} from './lib/handlebars-plugin';
 import {htmlPlugin} from './lib/html-plugin';
+import checker from 'vite-plugin-checker';
 
 export function servePlugins(options: ViteOptions): Plugin[] {
   return [
@@ -36,5 +37,11 @@ export function servePlugins(options: ViteOptions): Plugin[] {
     handlebarsPlugin(options.config.serve.partials, options),
 
     mkcert(),
+
+    checker({ 
+      typescript: {
+        buildMode:true
+      }
+    }),
   ];
 }

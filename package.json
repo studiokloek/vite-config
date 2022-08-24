@@ -66,14 +66,14 @@
     }
   },
   "dependencies": {
-    "@sveltejs/vite-plugin-svelte": "^1.0.1",
-    "@typescript-eslint/eslint-plugin": "^5.33.1",
-    "@typescript-eslint/parser": "^5.33.1",
+    "@sveltejs/vite-plugin-svelte": "^1.0.2",
+    "@typescript-eslint/eslint-plugin": "^5.34.0",
+    "@typescript-eslint/parser": "^5.34.0",
     "@vitejs/plugin-legacy": "^2.0.1",
     "eslint": "^8.22.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-formatter-pretty": "^4.1.0",
-    "eslint-import-resolver-typescript": "^3.4.2",
+    "eslint-import-resolver-typescript": "^3.5.0",
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.2.1",
@@ -87,11 +87,12 @@
     "prettier": "^2.7.1",
     "prettier-package-json": "^2.6.4",
     "prettier-plugin-svelte": "^2.7.0",
-    "sass": "^1.54.4",
+    "sass": "^1.54.5",
     "svelte": "^3.49.0",
-    "terser": "^5.14.2",
+    "terser": "^5.15.0",
     "vite": "v3.0.9",
-    "vite-plugin-banner": "^0.3.0",
+    "vite-plugin-banner": "^0.4.0",
+    "vite-plugin-checker": "^0.4.9",
     "vite-plugin-full-reload": "^1.0.4",
     "vite-plugin-handlebars": "naranjamecanica/vite-plugin-handlebars#tmp-release",
     "vite-plugin-html": "3.2.0",
@@ -101,22 +102,21 @@
     "vite-tsconfig-paths": "^3.5.0"
   },
   "devDependencies": {
-    "@microsoft/api-extractor": "^7.29.3",
+    "@microsoft/api-extractor": "^7.29.5",
     "@rollup/plugin-node-resolve": "^13.3.0",
-    "@rollup/plugin-typescript": "^8.3.4",
-    "@sveltejs/kit": "^1.0.0-next.424",
+    "@rollup/plugin-typescript": "^8.4.0",
+    "@sveltejs/kit": "^1.0.0-next.432",
     "@types/ejs": "^3.1.1",
     "@types/html-minifier-terser": "^7.0.0",
-    "@types/node": "^18.7.6",
+    "@types/node": "^18.7.13",
     "np": "^7.6.2",
-    "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
     "rollup": "^2.78.1",
     "typescript": "^4.7.4",
     "xo": "^0.51.0"
   },
   "resolutions": {
-    "@types/node": "^18.7.6",
+    "@types/node": "^18.7.13",
     "vite": "v3.0.9"
   }
 }
