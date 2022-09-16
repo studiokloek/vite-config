@@ -1,6 +1,6 @@
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {ConfigEnv, UserConfig} from 'vite';
+import type {ConfigEnv, UserConfig} from 'vite';
 import {buildPlugins} from './plugins/build';
 import {servePlugins} from './plugins/serve';
 import {
@@ -10,7 +10,7 @@ import {
   parsePackageGamesSettings,
   readJSON,
 } from './utils';
-import {
+import type {
   KloekViteConfig,
   PackageGamesSettings,
   ViteOptions,
@@ -105,7 +105,7 @@ export async function defineKloekViteConfig(
   switch (environment.command) {
     case 'serve':
       config.server = {
-        host: 'localhost',
+        host: true,
         https: true,
         open: getPageToServe(options.config, options.settings.games),
       };
