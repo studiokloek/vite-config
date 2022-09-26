@@ -1,19 +1,21 @@
 import legacyPlugin from '@vitejs/plugin-legacy';
-import {Plugin} from 'vite';
+import type {Plugin, PluginOption} from 'vite';
 import bannerPlugin from 'vite-plugin-banner';
 import {createHtmlPlugin} from 'vite-plugin-html';
-import {ViteOptions} from '../utils/interfaces';
+import type {ViteOptions} from '../utils/interfaces';
 import {imageminPlugin} from './lib/image-plugin';
 import {manifestPlugin} from './lib/manifest-plugin';
 
 // Build plugins
-export function buildPlugins(options: ViteOptions): Plugin[] {
+export function buildPlugins(
+  options: ViteOptions,
+): Array<Plugin | PluginOption> {
   // No build? no plugins..
   if (options.environment.command !== 'build') {
     return [];
   }
 
-  const plugins: Plugin[] = [];
+  const plugins: Array<Plugin | PluginOption> = [];
 
   if (options.config.build.legacy) {
     // Make sure the page works in older browsers

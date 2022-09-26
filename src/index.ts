@@ -1,4 +1,4 @@
-import {TypedFlags} from 'meow';
+import {type TypedFlags} from 'meow';
 import {build, createServer} from 'vite';
 import {defineKloekViteConfig} from './config';
 

@@ -1,16 +1,18 @@
 import path from 'node:path';
 import {svelte} from '@sveltejs/vite-plugin-svelte';
-import {Plugin} from 'vite';
+import {type Plugin, type PluginOption} from 'vite';
 import fullReload from 'vite-plugin-full-reload';
 import tsconfigPathsPlugin from 'vite-tsconfig-paths';
 import mkcert from 'vite-plugin-mkcert';
-import {ViteOptions} from '../utils/interfaces';
+import checker from 'vite-plugin-checker';
+import {type ViteOptions} from '../utils/interfaces';
 import {cwd} from '../utils';
 import {handlebarsPlugin} from './lib/handlebars-plugin';
 import {htmlPlugin} from './lib/html-plugin';
-import checker from 'vite-plugin-checker';
 
-export function servePlugins(options: ViteOptions): Plugin[] {
+export function servePlugins(
+  options: ViteOptions,
+): Array<Plugin | PluginOption> {
   return [
     htmlPlugin(options.settings.games),
 
@@ -38,10 +40,10 @@ export function servePlugins(options: ViteOptions): Plugin[] {
 
     mkcert(),
 
-    checker({ 
+    checker({
       typescript: {
-        buildMode:true
-      }
+        buildMode: true,
+      },
     }),
   ];
 }
