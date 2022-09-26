@@ -279,7 +279,7 @@
     node-fetch "^2.6.7"
     universal-user-agent "^6.0.0"
 
-"@octokit/rest@^19.0.4":
+"@octokit/rest@^19.0.3":
   version "19.0.4"
   resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-19.0.4.tgz#fd8bed1cefffa486e9ae46a9dc608ce81bcfcbdd"
   integrity sha512-LwG668+6lE8zlSYOfwPj4FxWdv/qFXYBpv79TWIQEpBLKA9D/IMcWsF/U9RGpA3YqMVDiTxpgVpEW3zTFfPFTA==
@@ -640,7 +640,7 @@
   dependencies:
     "@types/node" "*"
 
-"@typescript-eslint/eslint-plugin@*", "@typescript-eslint/eslint-plugin@^5.38.0":
+"@typescript-eslint/eslint-plugin@^5.35.1", "@typescript-eslint/eslint-plugin@^5.38.0":
   version "5.38.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-5.38.0.tgz#ac919a199548861012e8c1fb2ec4899ac2bc22ae"
   integrity sha512-GgHi/GNuUbTOeoJiEANi0oI6fF3gBQc3bGFYj40nnAPCbhrtEDf2rjBmefFadweBmO1Du1YovHeDP2h5JLhtTQ==
@@ -654,7 +654,7 @@
     semver "^7.3.7"
     tsutils "^3.21.0"
 
-"@typescript-eslint/parser@*", "@typescript-eslint/parser@^5.38.0":
+"@typescript-eslint/parser@^5.35.1", "@typescript-eslint/parser@^5.38.0":
   version "5.38.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-5.38.0.tgz#5a59a1ff41a7b43aacd1bb2db54f6bf1c02b2ff8"
   integrity sha512-/F63giJGLDr0ms1Cr8utDAxP2SPiglaD6V+pCOcG35P2jCqdfR7uuEhz1GIC3oy4hkUF8xA1XSXmd9hOh/a5EA==
@@ -2270,7 +2270,7 @@ eslint-config-prettier@^8.5.0:
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.5.0.tgz#5a81680ec934beca02c7b1a61cf8ca34b66feab1"
   integrity sha512-obmWKLUNCnhtQRKc+tmnYuQl0pFU1ibYJQ5BGhTVB08bHe9wC8qUeG7c08dj9XX+AuPj1YSGSQIHl1pnDHZR0Q==
 
-eslint-config-xo-typescript@*:
+eslint-config-xo-typescript@^0.53.0:
   version "0.53.0"
   resolved "https://registry.yarnpkg.com/eslint-config-xo-typescript/-/eslint-config-xo-typescript-0.53.0.tgz#702be21ea0dfcb124903c5f723d023b1fdeb0da2"
   integrity sha512-IJ1n70egMPTou/41HoGGFbLf/2WCsVW5lSUxOSklrR8T1221fMRPVJxIVZ3evr8R+N5wR6uzg/0uzSymwWA5Bg==
@@ -6984,15 +6984,16 @@ vite-plugin-live-reload@^3.0.0:
     chokidar "^3.5.0"
     picocolors "^1.0.0"
 
-vite-plugin-mkcert@^1.10.0:
-  version "1.10.0"
-  resolved "https://registry.yarnpkg.com/vite-plugin-mkcert/-/vite-plugin-mkcert-1.10.0.tgz#8e52a5b04c3b0a1c204f6fcf9a0b7c4bd2fe62f6"
-  integrity sha512-wacDanHZl307t57xD6XjqqYjwSClx2q4bU5RYu6+uejeHAuJIjggtKlJ6ZAtl1t8eIiX8os7648lP0+VFUfAzQ==
+vite-plugin-mkcert@1.9.0:
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/vite-plugin-mkcert/-/vite-plugin-mkcert-1.9.0.tgz#894fadd4d932fb1a8face1b73009982428cfba3d"
+  integrity sha512-lKIOVJvbt1ijAMeF31TYGwEzH8iqK+Q8BiInpQRcAW543y8HYttZTRVGDAFqVaej6iE5o7XAisZ1aCg+q5tOfA==
   dependencies:
-    "@octokit/rest" "^19.0.4"
+    "@octokit/rest" "^19.0.3"
     axios "^0.21.4"
     debug "^4.3.4"
     picocolors "^1.0.0"
+    vite "^3.0.0"
 
 vite-tsconfig-paths@^3.5.1:
   version "3.5.1"
@@ -7004,7 +7005,7 @@ vite-tsconfig-paths@^3.5.1:
     recrawl-sync "^2.0.3"
     tsconfig-paths "^4.0.0"
 
-vite@^3.0.5, vite@v3.1.3:
+vite@^3.0.0, vite@^3.0.5, vite@v3.1.3:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/vite/-/vite-3.1.3.tgz#b2a0821c11aae124bb7618f8036913c689afcc59"
   integrity sha512-/3XWiktaopByM5bd8dqvHxRt5EEgRikevnnrpND0gRfNkrMrPaGGexhtLCzv15RcCMtV2CLw+BPas8YFeSG0KA==

@@ -98,7 +98,7 @@
     "vite-plugin-html": "3.2.0",
     "vite-plugin-imagemin": "studiokloek/vite-plugin-imagemin#tmp-release",
     "vite-plugin-live-reload": "^3.0.0",
-    "vite-plugin-mkcert": "^1.10.0",
+    "vite-plugin-mkcert": "1.9.0",
     "vite-tsconfig-paths": "^3.5.1"
   },
   "devDependencies": {
