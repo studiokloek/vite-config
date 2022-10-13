@@ -2,11 +2,24 @@ import {type TypedFlags} from 'meow';
 import {build, createServer} from 'vite';
 import {defineKloekViteConfig} from './config';
 
-export async function kloekDevelopment(): Promise<void> {
+export async function kloekDevelopment(
+  flags: TypedFlags<{
+    mode: {
+      type: 'string';
+      alias: string;
+      default?: string;
+    };
+  }>,
+): Promise<void> {
   const config = await defineKloekViteConfig({
     command: 'serve',
     mode: 'development',
   });
+
+  // Different mode
+  if (typeof flags.mode === 'string') {
+    config.mode = flags.mode;
+  }
 
   const server = await createServer({
     configFile: false,
@@ -29,6 +42,11 @@ export async function kloekBuild(
       alias: string;
       default: string;
     };
+    mode: {
+      type: 'string';
+      alias: string;
+      default?: string;
+    };
   }>,
 ): Promise<void> {
   const config = await defineKloekViteConfig({
@@ -47,6 +65,11 @@ export async function kloekBuild(
   // Different base path
   if (typeof flags.base === 'string') {
     config.base = flags.base;
+  }
+
+  // Different mode
+  if (typeof flags.mode === 'string') {
+    config.mode = flags.mode;
   }
 
   await build({

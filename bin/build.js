@@ -8,10 +8,11 @@ const cli = meow(
 	  $ kloek-build 
 
     Options:
-      --path PATH           set the base path
-
-    Other options:
-      -e, --empty-out-dir   empty output dir before building
+      -b, --base PATH           set the base path
+      
+      Other options:
+      -m, --mode MODE           set the mode in which vite should run
+      -e, --empty-out-dir       empty output dir before building
 `,
   {
     importMeta: import.meta,
@@ -25,6 +26,10 @@ const cli = meow(
         type: 'string',
         alias: 'b',
         default: '/',
+      },
+      mode: {
+        type: 'string',
+        alias: 'm',
       },
     },
   },
