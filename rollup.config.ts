@@ -1,9 +1,15 @@
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {readFileSync} from 'node:fs';
 import {nodeResolve} from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
-import {defineConfig, RollupOptions} from 'rollup';
-import pkg from './package.json';
+import type {RollupOptions} from 'rollup';
+import {defineConfig} from 'rollup';
+
+// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+const pkg = JSON.parse(
+  readFileSync(new URL('package.json', import.meta.url)).toString(),
+);
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 

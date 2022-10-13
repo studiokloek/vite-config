@@ -1,8 +1,8 @@
 import os from 'node:os';
 import path from 'node:path';
-import {Plugin} from 'vite';
+import type {Plugin} from 'vite';
 import viteHandlebarsPlugin from 'vite-plugin-handlebars';
-import {ViteOptions} from '../../utils/interfaces';
+import type {ViteOptions} from '../../utils/interfaces';
 import {getPageIdFromUrl} from '../../utils';
 
 // Helpers voor handlebars

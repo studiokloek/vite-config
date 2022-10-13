@@ -1,6 +1,6 @@
 import path from 'node:path';
-import {BuildOptions} from 'vite';
-import {ViteOptions} from './interfaces';
+import type {BuildOptions} from 'vite';
+import type {ViteOptions} from './interfaces';
 
 export function defineBuildConfig(options: ViteOptions): BuildOptions {
   const input: Record<string, string> = {};

@@ -1,7 +1,7 @@
 import {existsSync, promises} from 'node:fs';
 import path from 'node:path';
-import {ConfigEnv, Plugin, UserConfig, ViteDevServer} from 'vite';
-import {GamesSettings} from '../../utils/interfaces';
+import type {ConfigEnv, Plugin, UserConfig, ViteDevServer} from 'vite';
+import type {GamesSettings} from '../../utils/interfaces';
 import {cwd, getPageIdFromUrl} from '../../utils';
 
 const PAGE_TEMPLATE = '{{> game data=data}}';

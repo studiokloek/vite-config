@@ -1,35 +1,35 @@
-import {ConfigEnv} from 'vite';
+import type {ConfigEnv} from 'vite';
 
-export interface ImageQualityConfig {
+export type ImageQualityConfig = {
   jpeg: number;
   png: [number, number];
-}
+};
 
-export interface KloekViteDevConfig {
+export type KloekViteDevConfig = {
   serveParams: string;
-}
+};
 
-export interface KloekViteServeConfig {
+export type KloekViteServeConfig = {
   partials: string | string[];
-}
+};
 
-export interface KloekViteBuildConfig {
+export type KloekViteBuildConfig = {
   basePath: string;
   legacy?: boolean;
   browserslist?: string | string[];
   imageQuality: ImageQualityConfig;
   azureSWA?: boolean;
   manifest?: boolean;
-}
+};
 
-export interface KloekViteConfig {
+export type KloekViteConfig = {
   dev: KloekViteDevConfig;
   serve: KloekViteServeConfig;
   build: KloekViteBuildConfig;
-}
+};
 export type GameSettingsProperty = 'info' | 'meta' | 'options';
 
-export interface GameSettings {
+export type GameSettings = {
   info: {
     id: string;
     page: string;
@@ -49,7 +49,7 @@ export interface GameSettings {
     orientation: string;
     fullscreen: string;
   };
-}
+};
 
 export type GamesSettings = Record<string, GameSettings>;
 
@@ -63,9 +63,9 @@ export type PackageGamesSettings = {
   games: GameSettings[];
 };
 
-export interface ViteOptions {
+export type ViteOptions = {
   root: string;
   environment: ConfigEnv;
   settings: GamesSettingsData;
   config: KloekViteConfig;
-}
+};

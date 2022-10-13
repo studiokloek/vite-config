@@ -1,5 +1,5 @@
-import {Plugin, ResolvedConfig} from 'vite';
-import {GameSettings, GamesSettings} from '../../utils/interfaces';
+import type {Plugin, ResolvedConfig} from 'vite';
+import type {GameSettings, GamesSettings} from '../../utils/interfaces';
 
 function renderGameManifest(
   pageId: string,

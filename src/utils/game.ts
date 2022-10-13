@@ -1,5 +1,5 @@
 import path from 'node:path';
-import {
+import type {
   GameSettings,
   GameSettingsProperty,
   GamesSettings,

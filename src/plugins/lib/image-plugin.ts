@@ -1,6 +1,6 @@
-import {ConfigEnv, Plugin} from 'vite';
+import type {ConfigEnv, Plugin} from 'vite';
 import imageminPlugin2 from 'vite-plugin-imagemin';
-import {ImageQualityConfig} from '../../utils/interfaces';
+import type {ImageQualityConfig} from '../../utils/interfaces';
 
 export function imageminPlugin(
   environment: ConfigEnv,
