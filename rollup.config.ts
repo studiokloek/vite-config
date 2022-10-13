@@ -38,11 +38,6 @@ const config = (commandLineArgs: RollupOptions): RollupOptions => {
         return;
       }
 
-      // No a11y warnings...
-      if (warning.code.startsWith('a11y-')) {
-        return;
-      }
-
       warn(warning);
     },
     input: path.resolve(__dirname, 'src/index.ts'),

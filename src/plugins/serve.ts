@@ -22,6 +22,19 @@ export function servePlugins(
         prebundleSvelteLibraries: true,
         useVitePreprocess: true,
       },
+
+      onwarn(warning, warn) {
+        if (!warn) {
+          return;
+        }
+
+        // No a11y warnings...
+        if (warning.code.startsWith('a11y-')) {
+          return;
+        }
+
+        warn(warning);
+      },
     }),
 
     tsconfigPathsPlugin({
