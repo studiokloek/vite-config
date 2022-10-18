@@ -33,6 +33,8 @@ export function defineBuildConfig(options: ViteOptions): BuildOptions {
                 return value;
               }
             }
+
+            return 'vendor';
           }
 
           return undefined;
