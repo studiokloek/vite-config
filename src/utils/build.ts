@@ -10,7 +10,7 @@ export function defineBuildConfig(options: ViteOptions): BuildOptions {
   }
 
   // Libs die aparte js krijgen:
-  const vendorChunks = ['firebase', 'pixi', 'lodash', 'capacitor', 'gsap'];
+  const vendorChunks = ['firebase', 'pixi', 'lodash', 'capacitor', 'gsap', 'studiokloek'];
 
   return {
     reportCompressedSize: false,
@@ -33,8 +33,6 @@ export function defineBuildConfig(options: ViteOptions): BuildOptions {
                 return value;
               }
             }
-
-            return 'vendor';
           }
 
           return undefined;
