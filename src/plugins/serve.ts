@@ -19,7 +19,7 @@ export function servePlugins(
     ...svelte({
       // Hot: false,
       experimental: {
-        prebundleSvelteLibraries: true,
+        // prebundleSvelteLibraries: true,
         useVitePreprocess: true,
       },
 

@@ -65,18 +65,18 @@
     }
   },
   "dependencies": {
-    "@sveltejs/vite-plugin-svelte": "^1.0.9",
-    "@typescript-eslint/eslint-plugin": "^5.40.1",
-    "@typescript-eslint/parser": "^5.40.1",
-    "@vitejs/plugin-legacy": "^2.2.0",
-    "eslint": "^8.25.0",
+    "@sveltejs/vite-plugin-svelte": "^1.1.0",
+    "@typescript-eslint/eslint-plugin": "^5.41.0",
+    "@typescript-eslint/parser": "^5.41.0",
+    "@vitejs/plugin-legacy": "^2.3.0",
+    "eslint": "^8.26.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-formatter-pretty": "^4.1.0",
-    "eslint-import-resolver-typescript": "^3.5.1",
+    "eslint-import-resolver-typescript": "^3.5.2",
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-promise": "^6.1.0",
+    "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-svelte3": "^4.0.0",
     "eslint-plugin-unicorn": "^44.0.2",
     "meow": "^11.0.0",
@@ -89,8 +89,8 @@
     "sass": "^1.55.0",
     "svelte": "^3.52.0",
     "terser": "^5.15.1",
-    "vite": "v3.1.8",
-    "vite-plugin-banner": "^0.5.0",
+    "vite": "v3.2.2",
+    "vite-plugin-banner": "^0.6.1",
     "vite-plugin-checker": "^0.5.1",
     "vite-plugin-full-reload": "^1.0.4",
     "vite-plugin-handlebars": "naranjamecanica/vite-plugin-handlebars#tmp-release",
@@ -98,17 +98,17 @@
     "vite-plugin-imagemin": "studiokloek/vite-plugin-imagemin#tmp-release",
     "vite-plugin-live-reload": "^3.0.1",
     "vite-plugin-mkcert": "1.10.1",
-    "vite-tsconfig-paths": "^3.5.1"
+    "vite-tsconfig-paths": "^3.5.2"
   },
   "devDependencies": {
-    "@microsoft/api-extractor": "7.33.4",
-    "@rollup/plugin-node-resolve": "^15.0.0",
-    "@rollup/plugin-typescript": "^9.0.1",
-    "@sveltejs/kit": "^1.0.0-next.516",
+    "@microsoft/api-extractor": "7.33.5",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-typescript": "^9.0.2",
+    "@sveltejs/kit": "^1.0.0-next.529",
     "@types/ejs": "^3.1.1",
     "@types/estree": "^1.0.0",
     "@types/html-minifier-terser": "^7.0.0",
-    "@types/node": "^18.11.0",
+    "@types/node": "^18.11.8",
     "rimraf": "^3.0.2",
     "rollup": "^3.2.3",
     "typescript": "4.8.4",
@@ -116,7 +116,7 @@
   },
   "resolutions": {
     "@types/estree": "^1.0.0",
-    "@types/node": "^18.11.0",
-    "vite": "v3.1.8"
+    "@types/node": "^18.11.8",
+    "vite": "v3.2.2"
   }
 }
