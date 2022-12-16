@@ -1,5 +1,5 @@
 import path from 'node:path';
-import {svelte} from '@sveltejs/vite-plugin-svelte';
+import {svelte, vitePreprocess} from '@sveltejs/vite-plugin-svelte';
 import {type Plugin, type PluginOption} from 'vite';
 import fullReload from 'vite-plugin-full-reload';
 import tsconfigPathsPlugin from 'vite-tsconfig-paths';
@@ -17,11 +17,7 @@ export function servePlugins(
     htmlPlugin(options.settings.games),
 
     ...svelte({
-      // Hot: false,
-      experimental: {
-        // prebundleSvelteLibraries: true,
-        useVitePreprocess: true,
-      },
+      preprocess:vitePreprocess(),
 
       onwarn(warning, warn) {
         if (!warn) {
