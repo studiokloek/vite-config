@@ -107,8 +107,8 @@ export async function defineKloekViteConfig(
     case 'serve':
       config.server = {
         host: true,
-        cors: options.config.serve.cors ?? true,
-        https: options.config.serve.https ?? true,
+        cors: options.config.dev.cors ?? true,
+        https: options.config.dev.https ?? true,
         open: getPageToServe(options.config, options.settings.games),
       };
       config.plugins = [
