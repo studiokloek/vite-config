@@ -11,6 +11,8 @@ export type KloekViteDevConfig = {
 
 export type KloekViteServeConfig = {
   partials: string | string[];
+  cors?: boolean;
+  https?: boolean;
 };
 
 export type KloekViteBuildConfig = {

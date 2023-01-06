@@ -1,6 +1,7 @@
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import type {ConfigEnv, UserConfig} from 'vite';
+import {basePlugins} from './plugins/base';
 import {buildPlugins} from './plugins/build';
 import {servePlugins} from './plugins/serve';
 import {
@@ -99,16 +100,21 @@ export async function defineKloekViteConfig(
       },
     },
 
-    plugins: [...servePlugins(options)],
+    plugins: [...basePlugins(options)],
   };
 
   switch (environment.command) {
     case 'serve':
       config.server = {
         host: true,
-        https: true,
+        cors: options.config.serve.cors ?? true,
+        https: options.config.serve.https ?? true,
         open: getPageToServe(options.config, options.settings.games),
       };
+      config.plugins = [
+        ...(config.plugins ? config.plugins : []),
+        ...servePlugins(),
+      ];
 
       break;
 
