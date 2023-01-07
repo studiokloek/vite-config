@@ -66,7 +66,7 @@ export function htmlPlugin(games: GamesSettings): Plugin {
             );
           } else {
             // Niks gevonden
-            response.end('404');
+            response.end();
           }
         });
       };
