@@ -32,7 +32,7 @@ export function basePlugins(
 
     tsconfigPathsPlugin({
       root: path.resolve(cwd),
-      extensions: ['.ts', '.json'],
+      // extensions: ['.ts', '.json'],
       loose: true,
     }),
   

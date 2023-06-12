@@ -47,7 +47,7 @@ export function manifestPlugin(games: GamesSettings): Plugin {
       // Voor iedere app een manifest maken:
       for (const [pageId, settings] of Object.entries(games)) {
         bundle[`${pageId}.webmanifest`] = {
-          isAsset: true,
+          needsCodeReference: false,
           type: 'asset',
           name: undefined,
           source: renderGameManifest(pageId, settings, config),
@@ -55,7 +55,7 @@ export function manifestPlugin(games: GamesSettings): Plugin {
         };
 
         bundle[`${pageId}-serviceworker.js`] = {
-          isAsset: true,
+          needsCodeReference: false,
           type: 'asset',
           name: undefined,
           source: "self.addEventListener('fetch', function() { return; });",
