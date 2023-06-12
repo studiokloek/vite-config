@@ -19,17 +19,17 @@ const cli = meow(
     flags: {
       emptyOutDir: {
         type: 'boolean',
-        alias: 'e',
+        shortFlag: 'e',
         default: true,
       },
       base: {
         type: 'string',
-        alias: 'b',
+        shortFlag: 'b',
         default: '/',
       },
       mode: {
         type: 'string',
-        alias: 'm',
+        shortFlag: 'm',
       },
     },
   },

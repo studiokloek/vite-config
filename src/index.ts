@@ -6,7 +6,7 @@ export async function kloekDevelopment(
   flags: TypedFlags<{
     mode: {
       type: 'string';
-      alias: string;
+      shortFlag: string;
       default?: string;
     };
   }>,
@@ -34,17 +34,17 @@ export async function kloekBuild(
   flags: TypedFlags<{
     emptyOutDir: {
       type: 'boolean';
-      alias: string;
+      shortFlag: string;
       default: true;
     };
     base: {
       type: 'string';
-      alias: string;
+      shortFlag: string;
       default: string;
     };
     mode: {
       type: 'string';
-      alias: string;
+      shortFlag: string;
       default?: string;
     };
   }>,
