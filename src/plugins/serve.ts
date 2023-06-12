@@ -15,9 +15,7 @@ export function servePlugins(): Array<Plugin | PluginOption> {
     mkcert(),
 
     checker({
-      typescript: {
-        buildMode: true,
-      },
+      typescript: true,
     }),
   ];
 }
