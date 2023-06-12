@@ -15,7 +15,7 @@ const cli = meow(
     flags: {
       mode: {
         type: 'string',
-        alias: 'm',
+        shortFlag: 'm',
       },
     },
   },
