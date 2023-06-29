@@ -1416,10 +1416,10 @@
     is-module "^1.0.0"
     resolve "^1.22.1"
 
-"@rollup/plugin-typescript@^11.1.1":
-  version "11.1.1"
-  resolved "https://registry.yarnpkg.com/@rollup/plugin-typescript/-/plugin-typescript-11.1.1.tgz#258663a7aa6b51390dd39ae6e5502f2c4b2807cb"
-  integrity sha512-Ioir+x5Bejv72Lx2Zbz3/qGg7tvGbxQZALCLoJaGrkNXak/19+vKgKYJYM3i/fJxvsb23I9FuFQ8CUBEfsmBRg==
+"@rollup/plugin-typescript@^11.1.2":
+  version "11.1.2"
+  resolved "https://registry.yarnpkg.com/@rollup/plugin-typescript/-/plugin-typescript-11.1.2.tgz#09eb5690a650bb0334bf84125bce9abd296442e4"
+  integrity sha512-0ghSOCMcA7fl1JM+0gYRf+Q/HWyg+zg7/gDSc+fRLmlJWcW5K1I+CLRzaRhXf4Y3DRyPnnDo4M2ktw+a6JcDEg==
   dependencies:
     "@rollup/pluginutils" "^5.0.1"
     resolve "^1.22.1"
@@ -1477,10 +1477,10 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
   integrity sha512-ONhaKPIufzzrlNbqtWFFd+jlnemX6lJAgq9ZeiZtS7I1PIf/la7CW4m83rTXRnVnsMbW2k56pGYu7AUFJD9Pow==
 
-"@sveltejs/kit@^1.20.5":
-  version "1.20.5"
-  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.20.5.tgz#5797ff20413b6b49e54012de4a19eb9a1f00a56a"
-  integrity sha512-8rJYZ2boRlO75lwpbpB+DlSzIwmTuamXTpVlDtw4dBk86o3UaDe/+Ro4xCsV/4FtTw2U8xPHyV83edAWbQHG0w==
+"@sveltejs/kit@^1.21.0":
+  version "1.21.0"
+  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.21.0.tgz#88f73710b2aa4cebc2ecd2cc78ee3752dc68db5c"
+  integrity sha512-CBsYoI34SjtOQp0eG85dmVnvTR3Pjs8VgAQhO0CgQja9BIorKl808F1X8EunPhCcyek5r5lKQE1Mmbi0RuzHqA==
   dependencies:
     "@sveltejs/vite-plugin-svelte" "^2.4.1"
     "@types/cookie" "^0.5.1"
@@ -3492,10 +3492,10 @@ eslint-plugin-promise@^6.1.1:
   resolved "https://registry.yarnpkg.com/eslint-plugin-promise/-/eslint-plugin-promise-6.1.1.tgz#269a3e2772f62875661220631bd4dafcb4083816"
   integrity sha512-tjqWDwVZQo7UIPMeDReOpUgHCmCiH+ePnVT+5zVapL0uuHnegBUs2smM13CzOs2Xb5+MHMRFTs9v24yjba4Oig==
 
-eslint-plugin-svelte@^2.31.1:
-  version "2.31.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-svelte/-/eslint-plugin-svelte-2.31.1.tgz#61f898880723a9f107d8917b45f1788d525cd124"
-  integrity sha512-08v+DqzHiwIVEbi+266D7+BDhayp9OSqCwa/lHaZlZOlFY0vZLYs/h7SkkUPzA5fTVt8OUJBtvCxFiWEYOvvGg==
+eslint-plugin-svelte@^2.32.0:
+  version "2.32.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-svelte/-/eslint-plugin-svelte-2.32.0.tgz#997a8f03860a137aeb7207a54a182b9bb69738f9"
+  integrity sha512-q8uxR4wFmAkb+RX2qIJIO+xAjecInZuGYXbXOvpxMwv7Y5oQrq5WOkiYwLqPZk6p1L5UmSr54duloKiBucDL7A==
   dependencies:
     "@eslint-community/eslint-utils" "^4.2.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
@@ -3507,7 +3507,7 @@ eslint-plugin-svelte@^2.31.1:
     postcss-safe-parser "^6.0.0"
     postcss-selector-parser "^6.0.11"
     semver "^7.5.3"
-    svelte-eslint-parser "^0.31.0"
+    svelte-eslint-parser "^0.32.0"
 
 eslint-plugin-unicorn@^46.0.0:
   version "46.0.1"
@@ -7331,10 +7331,10 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
-svelte-eslint-parser@^0.31.0:
-  version "0.31.0"
-  resolved "https://registry.yarnpkg.com/svelte-eslint-parser/-/svelte-eslint-parser-0.31.0.tgz#264a5226d28c25d39601654babe51ea24f91135e"
-  integrity sha512-/31RpBf/e3YjoFphjsyo3JRyN1r4UalGAGafXrZ6EJK4h4COOO0rbfBoen5byGsXnIJKsrlC1lkEd2Vzpq2IDg==
+svelte-eslint-parser@^0.32.0:
+  version "0.32.0"
+  resolved "https://registry.yarnpkg.com/svelte-eslint-parser/-/svelte-eslint-parser-0.32.0.tgz#4a9bd21fd8e9f29136c3eaf140ba1ce90e8cb353"
+  integrity sha512-Q8Nh3GHHoWZMv3Ej4zw+3+gyWPR8I5pPTJXEOvW+JOgwhGXqGKh7mOKNlVcEPtk+PCGiK9TPaRtvRkKoJR327A==
   dependencies:
     eslint-scope "^7.0.0"
     eslint-visitor-keys "^3.0.0"
@@ -7440,10 +7440,10 @@ terser@^5.10.0:
     commander "^2.20.0"
     source-map-support "~0.5.20"
 
-terser@^5.18.1:
-  version "5.18.1"
-  resolved "https://registry.yarnpkg.com/terser/-/terser-5.18.1.tgz#6d8642508ae9fb7b48768e48f16d675c89a78460"
-  integrity sha512-j1n0Ao919h/Ai5r43VAnfV/7azUYW43GPxK7qSATzrsERfW7+y2QW9Cp9ufnRF5CQUWbnLSo7UJokSWCqg4tsQ==
+terser@^5.18.2:
+  version "5.18.2"
+  resolved "https://registry.yarnpkg.com/terser/-/terser-5.18.2.tgz#ff3072a0faf21ffd38f99acc9a0ddf7b5f07b948"
+  integrity sha512-Ah19JS86ypbJzTzvUCX7KOsEIhDaRONungA4aYBjEP3JZRf4ocuDzTg4QWZnPn9DEMiMYGJPiSOy7aykoCc70w==
   dependencies:
     "@jridgewell/source-map" "^0.3.3"
     acorn "^8.8.2"
@@ -7884,10 +7884,10 @@ vite-plugin-live-reload@^3.0.2:
     chokidar "^3.5.0"
     picocolors "^1.0.0"
 
-vite-plugin-mkcert@1.15.0:
-  version "1.15.0"
-  resolved "https://registry.yarnpkg.com/vite-plugin-mkcert/-/vite-plugin-mkcert-1.15.0.tgz#629da7cf77f15af65ebd8d476d1f68af901874d4"
-  integrity sha512-0Pz7iExvo7pS2HsxMe6Y/HIrsFJidXN8Sju7tsL1XYQdbUKb/D0L5Wkj3UoGQmbbWZUFf8nHHa0XYbd4FH6ZrA==
+vite-plugin-mkcert@1.16.0:
+  version "1.16.0"
+  resolved "https://registry.yarnpkg.com/vite-plugin-mkcert/-/vite-plugin-mkcert-1.16.0.tgz#f02cce5747295dd3d8b1958b920bb6b9b7fdace8"
+  integrity sha512-5r+g8SB9wZzLNUFekGwZo3e0P6QlS6rbxK5p9z/itxNAimsYohgjK/YfVPVxM9EuglP9hjridq0lUejo9v1nVg==
   dependencies:
     "@octokit/rest" "^19.0.5"
     axios "^1.2.2"
