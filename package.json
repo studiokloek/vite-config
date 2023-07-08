@@ -90,7 +90,7 @@
     "stylelint": "^15.10.1",
     "svelte": "^3.59.2",
     "terser": "^5.18.2",
-    "vite": "v4.4.2",
+    "vite": "v4.3.9",
     "vite-plugin-banner": "^0.7.0",
     "vite-plugin-checker": "^0.6.1",
     "vite-plugin-full-reload": "^1.0.5",
@@ -118,7 +118,7 @@
   "resolutions": {
     "@types/estree": "^1.0.1",
     "@types/node": "^20.4.1",
-    "vite": "v4.4.2"
+    "vite": "v4.3.9"
   },
   "volta": {
     "node": "16.20.0",
