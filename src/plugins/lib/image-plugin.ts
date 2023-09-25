@@ -1,3 +1,6 @@
+
+import path from 'node:path';
+import {cwd} from '../../utils';
 import type {ConfigEnv, Plugin} from 'vite';
 import type {ImageQualityConfig} from '../../utils/interfaces'; 
 
@@ -20,6 +23,7 @@ export function imageminPlugin(
   return viteImagemin({
     skipIfLarger: true,
     verbose: true,
+    root: path.join(path.resolve(cwd), 'public'),
     plugins: {
       jpg: [
         imageminMozjpeg({
