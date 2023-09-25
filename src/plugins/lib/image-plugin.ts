@@ -18,6 +18,8 @@ export function imageminPlugin(
   }
 
   return viteImagemin({
+    skipIfLarger: true,
+    verbose: true,
     plugins: {
       jpg: [
         imageminMozjpeg({
