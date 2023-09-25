@@ -15,7 +15,7 @@ export function buildPlugins(
     return [];
   }
 
-  const plugins: Array<Plugin | PluginOption> = [];
+  const plugins: Array<Plugin | PluginOption | undefined> = [];
 
   if (options.config.build.legacy) {
     // Make sure the page works in older browsers
@@ -67,5 +67,5 @@ export function buildPlugins(
     plugins.push(manifestPlugin(options.settings.games));
   }
 
-  return plugins;
+  return plugins.filter(plugin => plugin !== undefined);
 }
