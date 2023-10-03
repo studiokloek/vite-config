@@ -10,10 +10,10 @@ export function defineBuildConfig(options: ViteOptions): BuildOptions {
   }
 
   // Libs die aparte js krijgen:
-  const vendorChunks = ['firebase', 'lodash', 'gsap', 'studiokloek'];
+  const vendorChunks = ['pixi', 'capacitor', 'firebase', 'lodash', 'gsap', 'studiokloek'];
 
   return {
-    reportCompressedSize: false,
+    reportCompressedSize: true,
     chunkSizeWarningLimit: 1000,
     outDir: '../public',
     assetsDir: 'generated',
