@@ -5,6 +5,7 @@ import {createHtmlPlugin} from 'vite-plugin-html';
 import type {ViteOptions} from '../utils/interfaces';
 import {imageminPlugin} from './lib/image-plugin';
 import {manifestPlugin} from './lib/manifest-plugin';
+import {visualizer} from 'rollup-plugin-visualizer';
 
 // Build plugins
 export function buildPlugins(
@@ -65,6 +66,15 @@ export function buildPlugins(
   // Create a manifest and minimal webworker for every game
   if (options.config.build.manifest) {
     plugins.push(manifestPlugin(options.settings.games));
+  }
+
+  if (options.config.build.analyzeBundle) {
+    plugins.push(visualizer({
+      template: "treemap", // or sunburst
+      open: true,
+      gzipSize: true,
+      filename: "bundle-analyse.html", // will be saved in project's root
+    }) as PluginOption);
   }
 
   return plugins.filter(plugin => plugin !== undefined);

@@ -20,8 +20,8 @@ export type KloekViteBuildConfig = {
   legacy?: boolean;
   browserslist?: string | string[];
   imageQuality: ImageQualityConfig;
-  azureSWA?: boolean;
   manifest?: boolean;
+  analyzeBundle?: boolean;
 };
 
 export type KloekViteConfig = {
