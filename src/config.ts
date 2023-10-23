@@ -64,6 +64,8 @@ export async function defineKloekViteConfig(
         '@fonts': path.resolve(cwd, 'source', 'static', 'fonts'),
       },
       dedupe: [            
+        '@studiokloek/ts-core-lib',
+        '@capacitor/app',
         '@capacitor/app',
         '@capacitor/core',
         '@capacitor/device',
