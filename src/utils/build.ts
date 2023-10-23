@@ -17,6 +17,8 @@ export function defineBuildConfig(options: ViteOptions): BuildOptions {
     chunkSizeWarningLimit: 1000,
     outDir: '../public',
     assetsDir: 'generated',
+    minify: 'terser',
+    sourcemap: options.config.build.sourceMaps === true,
     rollupOptions: {
       input,
       output: {
