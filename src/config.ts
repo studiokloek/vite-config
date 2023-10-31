@@ -66,7 +66,6 @@ export async function defineKloekViteConfig(
       dedupe: [            
         '@studiokloek/ts-core-lib',
         '@capacitor/app',
-        '@capacitor/app',
         '@capacitor/core',
         '@capacitor/device',
         '@capacitor/network',
