@@ -28,6 +28,7 @@ function mergeGameSettings(
 
 export function parsePackageGamesSettings(
   packageSettings: PackageGamesSettings,
+  version: string
 ): GamesSettingsData {
   // Merge settings
   const infoTypes = Object.keys(
@@ -45,6 +46,9 @@ export function parsePackageGamesSettings(
     // Zorg er voor dat page altijd gezet is
     const pageId = settings.info.page ?? settings.info.id ?? 'unknown';
     settings.info.page = pageId;
+
+    // eigen versie nummer of de generieke uit de package
+    settings.info.version = settings.info.version ?? version;
 
     // Sla settings op onder page id
     allSettings.games[pageId] = settings;

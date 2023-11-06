@@ -36,7 +36,7 @@ export async function defineKloekViteConfig(
       description: pkg.description as string,
     },
     environment,
-    settings: parsePackageGamesSettings(pkg.settings as PackageGamesSettings),
+    settings: parsePackageGamesSettings(pkg.settings as PackageGamesSettings, pkg.version as string),
     config: {
       ...kloekConfig,
       build: {...kloekConfig.build, browserslist},

@@ -37,7 +37,7 @@ export type GameSettings = {
   info: {
     id: string;
     page: string;
-    version: number;
+    version: string;
     client: string;
     year: number;
   };
