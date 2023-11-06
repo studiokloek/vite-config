@@ -1,6 +1,7 @@
 import {type TypedFlags} from 'meow';
 import {build, createServer} from 'vite';
 import {defineKloekViteConfig} from './config';
+import { addBuildFolderToZip, getPackageConfig } from './utils';
 
 export async function kloekDevelopment(
   flags: TypedFlags<{
@@ -76,4 +77,10 @@ export async function kloekBuild(
     configFile: false,
     ...config,
   });
+
+
+  // maken we een zip aan?
+  if (getPackageConfig().vite.build.createZip) {
+    await addBuildFolderToZip();
+  }
 }

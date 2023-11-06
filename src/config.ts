@@ -1,20 +1,19 @@
 import path from 'node:path';
-import {fileURLToPath} from 'node:url';
-import type {ConfigEnv, UserConfig} from 'vite';
-import {basePlugins} from './plugins/base';
-import {buildPlugins} from './plugins/build';
-import {servePlugins} from './plugins/serve';
+import { fileURLToPath } from 'node:url';
+import type { ConfigEnv, UserConfig } from 'vite';
+import { basePlugins } from './plugins/base';
+import { buildPlugins } from './plugins/build';
+import { servePlugins } from './plugins/serve';
 import {
   cwd,
   defineBuildConfig,
+  getPackageConfig,
   getPageToServe,
-  parsePackageGamesSettings,
-  readJSON,
+  parsePackageGamesSettings
 } from './utils';
 import type {
-  KloekViteConfig,
   PackageGamesSettings,
-  ViteOptions,
+  ViteOptions
 } from './utils/interfaces';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -22,24 +21,16 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export async function defineKloekViteConfig(
   environment: ConfigEnv,
 ): Promise<UserConfig> {
-  const pkg = readJSON(path.resolve(cwd, 'package.json')) as Record<
-    string,
-    unknown
-  >;
-  const kloekConfig = pkg.vite as KloekViteConfig;
-  const browserslist = pkg.browserslist as string | string[];
+  const pkg = getPackageConfig();
+
   const options: ViteOptions = {
     root: path.resolve(cwd, 'source'),
-    package: {
-      version: pkg.version as string,
-      name: pkg.name as string,
-      description: pkg.description as string,
-    },
+    package: pkg,
     environment,
     settings: parsePackageGamesSettings(pkg.settings as PackageGamesSettings, pkg.version as string),
     config: {
-      ...kloekConfig,
-      build: {...kloekConfig.build, browserslist},
+      ...pkg.vite,
+      build: {...pkg.vite.build, browserslist: pkg.browserslist},
       serve: {
         partials: [
           path.resolve(__dirname, 'partials'),
@@ -51,7 +42,7 @@ export async function defineKloekViteConfig(
 
   const config: UserConfig = {
     logLevel: 'info',
-    base: kloekConfig.build.basePath,
+    base: pkg.vite.build.basePath,
     root: options.root,
     envDir: path.resolve(cwd, 'env'),
     envPrefix: ['KLOEK_', 'VITE_'],

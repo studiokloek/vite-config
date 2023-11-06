@@ -78,3 +78,12 @@ export type ViteOptions = {
   settings: GamesSettingsData;
   config: KloekViteConfig;
 };
+
+export type PackageConfig = {
+  vite:KloekViteConfig;
+  settings: PackageGamesSettings;
+  browserslist: string | string[];
+  version: string;
+  name: string;
+  description: string;
+};

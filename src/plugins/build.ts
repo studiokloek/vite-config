@@ -1,15 +1,11 @@
 import legacyPlugin from '@vitejs/plugin-legacy';
-import path from 'node:path';
 import { visualizer } from 'rollup-plugin-visualizer';
 import type { Plugin, PluginOption } from 'vite';
 import bannerPlugin from 'vite-plugin-banner';
 import { createHtmlPlugin } from 'vite-plugin-html';
-import zipPack from "vite-plugin-zip-pack";
-import { cwd } from '../utils';
 import type { ViteOptions } from '../utils/interfaces';
 import { imageminPlugin } from './lib/image-plugin';
 import { manifestPlugin } from './lib/manifest-plugin';
-import filenamify from 'filenamify';
 
 // Build plugins
 export function buildPlugins(
@@ -78,16 +74,6 @@ export function buildPlugins(
       gzipSize: true,
       filename: "bundle-analyse.html", // will be saved in project's root
     }) as PluginOption);
-  }
-
-  // Do we need to create a zip file of the build?
-  if (options.config.build.createZip) {
-    const outFileName = filenamify(`${options.package.name}-${options.package.version}.zip`, {replacement: '-'});
-    plugins.push(zipPack({
-      inDir: path.resolve(cwd, 'public'),
-      outDir: path.resolve(cwd, 'zips'),
-      outFileName
-    }));
   }
 
   return plugins.filter(plugin => plugin !== undefined);
