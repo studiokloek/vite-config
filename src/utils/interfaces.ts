@@ -23,6 +23,7 @@ export type KloekViteBuildConfig = {
   manifest?: boolean;
   analyzeBundle?: boolean;
   sourceMaps?: boolean | 'inline' | 'hidden';
+  createZip?: boolean;
 };
 
 export type KloekViteConfig = {
@@ -68,6 +69,11 @@ export type PackageGamesSettings = {
 
 export type ViteOptions = {
   root: string;
+  package: {
+    version: string;
+    name: string;
+    description: string;
+  }
   environment: ConfigEnv;
   settings: GamesSettingsData;
   config: KloekViteConfig;

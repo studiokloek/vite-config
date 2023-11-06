@@ -3740,6 +3740,11 @@ filename-reserved-regex@^2.0.0:
   resolved "https://registry.yarnpkg.com/filename-reserved-regex/-/filename-reserved-regex-2.0.0.tgz#abf73dfab735d045440abfea2d91f389ebbfa229"
   integrity sha512-lc1bnsSr4L4Bdif8Xb/qrtokGbq5zlsms/CYH8PP+WtCkGNF65DPiQY8vG3SakEdRn8Dlnm+gW/qWKKjS5sZzQ==
 
+filename-reserved-regex@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/filename-reserved-regex/-/filename-reserved-regex-3.0.0.tgz#3d5dd6d4e2d73a3fed2ebc4cd0b3448869a081f7"
+  integrity sha512-hn4cQfU6GOT/7cFHXBqeBg2TbrMBgdD0kcjLhvSQYYwm3s4B6cjvBfb7nBALJLAXqmU5xajSa7X2NnUud/VCdw==
+
 filenamify@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/filenamify/-/filenamify-2.1.0.tgz#88faf495fb1b47abfd612300002a16228c677ee9"
@@ -3748,6 +3753,13 @@ filenamify@^2.0.0:
     filename-reserved-regex "^2.0.0"
     strip-outer "^1.0.0"
     trim-repeated "^1.0.0"
+
+filenamify@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/filenamify/-/filenamify-6.0.0.tgz#38def94098c62154c42a41d822650f5f55bcbac2"
+  integrity sha512-vqIlNogKeyD3yzrm0yhRMQg8hOVwYcYRfjEoODd49iCprMn4HL85gK3HcykQE53EPIpX3HcAbGA5ELQv216dAQ==
+  dependencies:
+    filename-reserved-regex "^3.0.0"
 
 fill-range@^7.0.1:
   version "7.0.1"
@@ -7465,10 +7477,10 @@ vite-plugin-mkcert@1.16.0:
     debug "^4.3.4"
     picocolors "^1.0.0"
 
-vite-plugin-zip-file@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/vite-plugin-zip-file/-/vite-plugin-zip-file-2.1.1.tgz#8949ba51055900f1a854cb41467c5f73186c19ec"
-  integrity sha512-F969SDEyq7goyXV4vLw5rM5KoON5VMDSoKEjDvdGpz2iK3Uy1LhMB7hptu2hw3rmrJ0O36/v9m/DEKPL6MfRYQ==
+vite-plugin-zip-pack@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/vite-plugin-zip-pack/-/vite-plugin-zip-pack-1.0.6.tgz#baaf8222ffb148eccdb70fff7b4cc44c57436896"
+  integrity sha512-3yNUIodC0kNG4yXm1+u9khGijCqMIMTX0aj1qUZS/xRvXgOn3YOaUwa6qBz5sZIMiCvno/G1WYFdtM7MHAb3jg==
   dependencies:
     jszip "^3.10.1"
 

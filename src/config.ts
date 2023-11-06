@@ -30,6 +30,11 @@ export async function defineKloekViteConfig(
   const browserslist = pkg.browserslist as string | string[];
   const options: ViteOptions = {
     root: path.resolve(cwd, 'source'),
+    package: {
+      version: pkg.version as string,
+      name: pkg.name as string,
+      description: pkg.description as string,
+    },
     environment,
     settings: parsePackageGamesSettings(pkg.settings as PackageGamesSettings),
     config: {

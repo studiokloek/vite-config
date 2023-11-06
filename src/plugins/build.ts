@@ -1,11 +1,15 @@
 import legacyPlugin from '@vitejs/plugin-legacy';
-import type {Plugin, PluginOption} from 'vite';
+import path from 'node:path';
+import { visualizer } from 'rollup-plugin-visualizer';
+import type { Plugin, PluginOption } from 'vite';
 import bannerPlugin from 'vite-plugin-banner';
-import {createHtmlPlugin} from 'vite-plugin-html';
-import type {ViteOptions} from '../utils/interfaces';
-import {imageminPlugin} from './lib/image-plugin';
-import {manifestPlugin} from './lib/manifest-plugin';
-import {visualizer} from 'rollup-plugin-visualizer';
+import { createHtmlPlugin } from 'vite-plugin-html';
+import zipPack from "vite-plugin-zip-pack";
+import { cwd } from '../utils';
+import type { ViteOptions } from '../utils/interfaces';
+import { imageminPlugin } from './lib/image-plugin';
+import { manifestPlugin } from './lib/manifest-plugin';
+import filenamify from 'filenamify';
 
 // Build plugins
 export function buildPlugins(
@@ -42,9 +46,9 @@ export function buildPlugins(
     ...(createHtmlPlugin({minify: true, pages}) as Plugin[]),
 
     // Add a banner to generated js/css
-    bannerPlugin(
-      `
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    bannerPlugin({
+      outDir: '../public',
+      content:`. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 
          __                             ,      _            _
         /  )              |  o         /|   / | |          | |
@@ -57,9 +61,7 @@ export function buildPlugins(
 
         Studio Kloek ❤ PixiJS, GSAP & howler.js
 
-    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-
-    `,
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .`}
     ),
   );
 
@@ -68,6 +70,7 @@ export function buildPlugins(
     plugins.push(manifestPlugin(options.settings.games));
   }
 
+  // Do we need to analyse the build?
   if (options.config.build.analyzeBundle) {
     plugins.push(visualizer({
       template: "treemap", // or sunburst
@@ -75,6 +78,16 @@ export function buildPlugins(
       gzipSize: true,
       filename: "bundle-analyse.html", // will be saved in project's root
     }) as PluginOption);
+  }
+
+  // Do we need to create a zip file of the build?
+  if (options.config.build.createZip) {
+    const outFileName = filenamify(`${options.package.name}-${options.package.version}.zip`, {replacement: '-'});
+    plugins.push(zipPack({
+      inDir: path.resolve(cwd, 'public'),
+      outDir: path.resolve(cwd, 'zips'),
+      outFileName
+    }));
   }
 
   return plugins.filter(plugin => plugin !== undefined);
