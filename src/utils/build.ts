@@ -18,7 +18,7 @@ export function defineBuildConfig(options: ViteOptions): BuildOptions {
     outDir: '../public',
     assetsDir: 'generated',
     minify: 'terser',
-    sourcemap: options.config.build.sourceMaps === true,
+    sourcemap: options.config.build.sourceMaps ?? false,
     rollupOptions: {
       input,
       output: {

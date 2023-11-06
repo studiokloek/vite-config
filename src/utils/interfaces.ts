@@ -22,7 +22,7 @@ export type KloekViteBuildConfig = {
   imageQuality: ImageQualityConfig;
   manifest?: boolean;
   analyzeBundle?: boolean;
-  sourceMaps?: boolean;
+  sourceMaps?: boolean | 'inline' | 'hidden';
 };
 
 export type KloekViteConfig = {
