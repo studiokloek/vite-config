@@ -43,6 +43,16 @@ export async function kloekBuild(
       shortFlag: string;
       default: false;
     };
+    createSourcemaps: {
+      type: 'boolean';
+      shortFlag: string;
+      default: false;
+    };
+    inlineSourcemaps: {
+      type: 'boolean';
+      shortFlag: string;
+      default: false;
+    };
     base: {
       type: 'string';
       shortFlag: string;
@@ -65,6 +75,14 @@ export async function kloekBuild(
     config.build = {
       ...config.build,
       emptyOutDir: flags.emptyOutDir,
+    };
+  }
+
+  // Create sourcemaps?
+  if (flags.createSourcemaps !== undefined) {
+    config.build = {
+      ...config.build,
+      sourcemap: flags.createSourcemaps ? (flags.inlineSourcemaps ? 'inline' : true) : false,
     };
   }
 

@@ -13,6 +13,8 @@ const cli = meow(
       Other options:
       -m, --mode MODE           set the mode in which vite should run
       -e, --empty-out-dir       empty output dir before building
+      -s, --sourcemaps          should we create source maps
+      -i, --inline-sourcemaps   inline source maps
       -z, --create-zip          create zip file from build
 `,
   {
@@ -26,6 +28,16 @@ const cli = meow(
       createZip: {
         type: 'boolean',
         shortFlag: 'z',
+        default: false,
+      },
+      sourcemaps: {
+        type: 'boolean',
+        shortFlag: 's',
+        default: false,
+      },
+      inlineSourcemaps: {
+        type: 'boolean',
+        shortFlag: 'i',
         default: false,
       },
       base: {
