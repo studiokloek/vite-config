@@ -13,6 +13,7 @@ const cli = meow(
       Other options:
       -m, --mode MODE           set the mode in which vite should run
       -e, --empty-out-dir       empty output dir before building
+      -z, --create-zip          create zip file from build
 `,
   {
     importMeta: import.meta,
@@ -21,6 +22,11 @@ const cli = meow(
         type: 'boolean',
         shortFlag: 'e',
         default: true,
+      },
+      createZip: {
+        type: 'boolean',
+        shortFlag: 'z',
+        default: false,
       },
       base: {
         type: 'string',
