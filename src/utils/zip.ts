@@ -10,7 +10,7 @@ export async function addBuildFolderToZip(): Promise<void> {
   const destinationDirectory = path.join(path.resolve(cwd), 'zips');
   const destinationFile = path.join(
     destinationDirectory,
-    filenamify(`${pkg.name}-${pkg.version}.zip`, {replacement: '-'}),
+    filenamify(`${pkg.name}-v${pkg.version}.zip`, {replacement: '-'}),
   );
 
   // Does the folder exist?
