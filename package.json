@@ -65,10 +65,10 @@
     }
   },
   "dependencies": {
-    "@sveltejs/vite-plugin-svelte": "^2.5.0",
-    "@typescript-eslint/eslint-plugin": "^6.10.0",
-    "@typescript-eslint/parser": "^6.10.0",
-    "@vheemstra/vite-plugin-imagemin": "^1.0.12",
+    "@sveltejs/vite-plugin-svelte": "^2.5.2",
+    "@typescript-eslint/eslint-plugin": "^6.11.0",
+    "@typescript-eslint/parser": "^6.11.0",
+    "@vheemstra/vite-plugin-imagemin": "^1.1.0",
     "@vitejs/plugin-legacy": "^4.1.1",
     "eslint": "^8.53.0",
     "eslint-config-prettier": "^9.0.0",
@@ -88,9 +88,9 @@
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.31",
     "postcss-load-config": "^4.0.1",
-    "prettier": "^3.0.3",
+    "prettier": "^3.1.0",
     "prettier-package-json": "^2.8.0",
-    "prettier-plugin-svelte": "^3.0.3",
+    "prettier-plugin-svelte": "^3.1.0",
     "rollup-plugin-visualizer": "^5.9.2",
     "sass": "^1.69.5",
     "stylelint": "^15.11.0",
@@ -108,10 +108,10 @@
     "zip-a-folder": "^3.1.3"
   },
   "devDependencies": {
-    "@microsoft/api-extractor": "7.38.2",
+    "@microsoft/api-extractor": "7.38.3",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-typescript": "^11.1.5",
-    "@sveltejs/kit": "^1.27.4",
+    "@sveltejs/kit": "^1.27.6",
     "@types/ejs": "^3.1.5",
     "@types/estree": "^1.0.5",
     "@types/html-minifier-terser": "^7.0.2",
@@ -120,17 +120,17 @@
     "@types/imagemin-optipng": "^5.2.4",
     "@types/node": "^20.9.0",
     "rimraf": "^5.0.5",
-    "rollup": "^3.29.4",
+    "rollup": "^4.4.1",
     "typescript": "4.9.5",
     "xo": "^0.56.0"
   },
   "resolutions": {
-    "@types/estree": "^1.0.3",
-    "@types/node": "^20.8.7",
+    "@types/estree": "^1.0.5",
+    "@types/node": "^20.9.0",
     "vite": "v4.5.0"
   },
   "volta": {
-    "node": "16.20.0",
+    "node": "18.18.2",
     "yarn": "1.22.19"
   }
 }
