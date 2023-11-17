@@ -20,7 +20,7 @@ export function imageminPlugin(
   return viteImagemin({
     skipIfLarger: true,
     verbose: true,
-    cache: false,
+    cache: true,
     root: path.join(path.resolve(cwd), 'public'),
     plugins: {
       jpg: [

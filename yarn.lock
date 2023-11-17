@@ -1666,10 +1666,10 @@
   resolved "https://registry.yarnpkg.com/@types/minimist/-/minimist-1.2.4.tgz#81f886786411c45bba3f33e781ab48bd56bfca2e"
   integrity sha512-Kfe/D3hxHTusnPNRbycJE1N77WHDsdS4AjUYIzlDzhDrS47NrwuL3YW4VITxwR7KCVpzwgy4Rbj829KSSQmwXQ==
 
-"@types/node@*", "@types/node@^20.9.0":
-  version "20.9.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.9.0.tgz#bfcdc230583aeb891cf51e73cfdaacdd8deae298"
-  integrity sha512-nekiGu2NDb1BcVofVcEKMIwzlx4NjHlcjhoxxKBNLtz15Y1z7MYf549DFvkHSId02Ax6kGwWntIBPC3l/JZcmw==
+"@types/node@*", "@types/node@^20.9.1":
+  version "20.9.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.9.1.tgz#9d578c610ce1e984adda087f685ace940954fe19"
+  integrity sha512-HhmzZh5LSJNS5O8jQKpJ/3ZcrrlG6L70hpGqMIAoM9YVD0YBRNWYsfwcXq8VnSjlNpCpgLzMXdiPo+dxcvSmiA==
   dependencies:
     undici-types "~5.26.4"
 
@@ -1873,10 +1873,10 @@
   resolved "https://registry.yarnpkg.com/@ungap/structured-clone/-/structured-clone-1.2.0.tgz#756641adb587851b5ccb3e095daf27ae581c8406"
   integrity sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==
 
-"@vheemstra/vite-plugin-imagemin@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@vheemstra/vite-plugin-imagemin/-/vite-plugin-imagemin-1.1.0.tgz#a599cd28d436b994791967f104f2398f225f97cc"
-  integrity sha512-PIWkaFEECzoa7o9puy4sqixF0twrQvcKoqBsALNspk3nbtBx7MMFZsgyD5YIuj8J803PAfov0A4s2q8ZOgDaCg==
+"@vheemstra/vite-plugin-imagemin@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@vheemstra/vite-plugin-imagemin/-/vite-plugin-imagemin-1.1.1.tgz#b7f27b9f417d4b16387a5ee9ec8018c9c7bdc807"
+  integrity sha512-v6jIM69v/HCVVDc2K4z1CytYliIzuKY5BofKjIm7YjdlSEhlC1h3dFkcKv2B5dBmx/Q0Tz+KVYUj0SDo8+/LqQ==
   dependencies:
     "@file-cache/core" "^1.1.4"
     chalk "^5.2.0"
@@ -7612,10 +7612,10 @@ vite-plugin-checker@^0.6.2:
     vscode-languageserver-textdocument "^1.0.1"
     vscode-uri "^3.0.2"
 
-vite-plugin-full-reload@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/vite-plugin-full-reload/-/vite-plugin-full-reload-1.0.5.tgz#6cddfa94e51909843bc7156ab728dbac972b8560"
-  integrity sha512-kVZFDFWr0DxiHn6MuDVTQf7gnWIdETGlZh0hvTiMXzRN80vgF4PKbONSq8U1d0WtHsKaFODTQgJeakLacoPZEQ==
+vite-plugin-full-reload@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/vite-plugin-full-reload/-/vite-plugin-full-reload-1.1.0.tgz#ca6fa32631024a459ea9e5613dd4c0ff0f3b7995"
+  integrity sha512-3cObNDzX6DdfhD9E7kf6w2mNunFpD7drxyNgHLw+XwIYAgb+Xt16SEXo0Up4VH+TMf3n+DSVJZtW2POBGcBYAA==
   dependencies:
     picocolors "^1.0.0"
     picomatch "^2.3.1"
