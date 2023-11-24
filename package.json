@@ -65,10 +65,10 @@
     }
   },
   "dependencies": {
-    "@sveltejs/vite-plugin-svelte": "^2.5.2",
+    "@sveltejs/vite-plugin-svelte": "^2.5.3",
     "@typescript-eslint/eslint-plugin": "^6.12.0",
     "@typescript-eslint/parser": "^6.12.0",
-    "@vheemstra/vite-plugin-imagemin": "^1.1.4",
+    "@vheemstra/vite-plugin-imagemin": "^1.1.5",
     "@vitejs/plugin-legacy": "^4.1.1",
     "eslint": "^8.54.0",
     "eslint-config-prettier": "^9.0.0",
@@ -90,8 +90,8 @@
     "postcss-load-config": "^4.0.2",
     "prettier": "^3.1.0",
     "prettier-package-json": "^2.8.0",
-    "prettier-plugin-svelte": "^3.1.1",
-    "rollup-plugin-visualizer": "^5.9.2",
+    "prettier-plugin-svelte": "^3.1.2",
+    "rollup-plugin-visualizer": "^5.9.3",
     "sass": "^1.69.5",
     "stylelint": "^15.11.0",
     "svelte": "^3.59.2",
@@ -118,15 +118,15 @@
     "@types/imagemin": "^8.0.5",
     "@types/imagemin-mozjpeg": "^8.0.4",
     "@types/imagemin-optipng": "^5.2.4",
-    "@types/node": "^20.9.4",
+    "@types/node": "^20.10.0",
     "rimraf": "^5.0.5",
-    "rollup": "^4.5.1",
+    "rollup": "^4.5.2",
     "typescript": "4.9.5",
     "xo": "^0.56.0"
   },
   "resolutions": {
     "@types/estree": "^1.0.5",
-    "@types/node": "^20.9.1",
+    "@types/node": "^20.10.0",
     "vite": "v4.5.0"
   },
   "volta": {
