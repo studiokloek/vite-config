@@ -126,7 +126,7 @@
   },
   "resolutions": {
     "@types/estree": "^1.0.5",
-    "@types/node": "^20.10.3",
+    "@types/node": "^20.11.0",
     "vite": "v4.5.1"
   },
   "volta": {
