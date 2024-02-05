@@ -1,12 +1,12 @@
 import path from 'node:path';
 import type {ConfigEnv, Plugin} from 'vite';
 import viteImagemin from '@vheemstra/vite-plugin-imagemin';
+import imageminMozjpeg from 'imagemin-mozjpeg';
 import type {ImageQualityConfig} from '../../utils/interfaces';
 import {cwd, readJSON} from '../../utils';
 import {md5} from '../../utils/hash';
 
 // The minifiers you want to use:
-import imageminMozjpeg from 'imagemin-mozjpeg';
 import imageminPngQuant from 'imagemin-pngquant';
 import imageminOptiPng from 'imagemin-optipng';
 
@@ -24,6 +24,7 @@ export function imageminPlugin(
     skipIfLarger: true,
     verbose: true,
     cache: true,
+    cacheDir: path.resolve(cwd, '.cache/vite-plugin-imagemin'),
     cacheKey: `${pkg.name}-${md5(JSON.stringify({...options}))}`,
     root: path.join(path.resolve(cwd), 'public'),
     plugins: {
