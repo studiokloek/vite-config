@@ -1,5 +1,5 @@
 import {type TypedFlags} from 'meow';
-import {build, createServer} from 'vite';
+import {build, createServer, type LogLevel} from 'vite';
 import {defineKloekViteConfig} from './config';
 import {addBuildFolderToZip, getPackageConfig} from './utils';
 
@@ -33,15 +33,25 @@ export async function kloekDevelopment(
 
 export async function kloekBuild(
   flags: TypedFlags<{
+    base: {
+      type: 'string';
+      shortFlag: string;
+      default: string;
+    };
+    mode: {
+      type: 'string';
+      shortFlag: string;
+      default?: string;
+    };
+    logLevel: {
+      type: 'string';
+      shortFlag: string;
+      default?: string;
+    };
     emptyOutDir: {
       type: 'boolean';
       shortFlag: string;
       default: true;
-    };
-    createZip: {
-      type: 'boolean';
-      shortFlag: string;
-      default: false;
     };
     sourcemaps: {
       type: 'boolean';
@@ -53,15 +63,10 @@ export async function kloekBuild(
       shortFlag: string;
       default: false;
     };
-    base: {
-      type: 'string';
+    createZip: {
+      type: 'boolean';
       shortFlag: string;
-      default: string;
-    };
-    mode: {
-      type: 'string';
-      shortFlag: string;
-      default?: string;
+      default: false;
     };
   }>,
 ): Promise<void> {
@@ -95,6 +100,9 @@ export async function kloekBuild(
   if (typeof flags.mode === 'string') {
     config.mode = flags.mode;
   }
+
+  // Different mode
+  config.logLevel = flags.logLevel as LogLevel | undefined;
 
   await build({
     configFile: false,
