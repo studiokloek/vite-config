@@ -4,9 +4,16 @@ import fullReload from 'vite-plugin-full-reload';
 import mkcert from 'vite-plugin-mkcert';
 import checker from 'vite-plugin-checker';
 import {cwd} from '../utils';
-export function servePlugins(): Array<Plugin | PluginOption> {
+import {type KloekConfigSettings} from '../config';
+
+export function servePlugins(settings: KloekConfigSettings): Array<Plugin | PluginOption> {
+  const fullReloadPaths = ['script/**/*.ts'];
+  if (settings.fullReloadSvelte) {
+    fullReloadPaths.push('svelte/**/*.svelte');
+  }
+
   return [
-    fullReload(['script/**/*.ts', 'svelte/**/*.svelte'], {
+    fullReload(fullReloadPaths, {
       root: path.join(path.resolve(cwd), 'source'),
       log: true,
       always: true,

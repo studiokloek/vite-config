@@ -10,12 +10,22 @@ export async function kloekDevelopment(
       shortFlag: string;
       default?: string;
     };
+    fullReloadSvelte: {
+      type: 'boolean';
+      shortFlag: string;
+      default: true;
+    };
   }>,
 ): Promise<void> {
-  const config = await defineKloekViteConfig({
-    command: 'serve',
-    mode: 'development',
-  });
+  const config = await defineKloekViteConfig(
+    {
+      command: 'serve',
+      mode: 'development',
+    },
+    {
+      fullReloadSvelte: flags.fullReloadSvelte,
+    },
+  );
 
   // Different mode
   if (typeof flags.mode === 'string') {

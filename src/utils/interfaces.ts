@@ -24,6 +24,7 @@ export type KloekViteBuildConfig = {
   analyzeBundle?: boolean;
   sourceMaps?: boolean | 'inline' | 'hidden';
   createZip?: boolean;
+  fullReloadSvelte?: boolean;
 };
 
 export type KloekViteConfig = {
