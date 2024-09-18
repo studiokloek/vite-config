@@ -10,24 +10,12 @@ export async function kloekDevelopment(
       shortFlag: string;
       default?: string;
     };
-    fullReloadSvelte: {
-      type: 'boolean';
-      shortFlag: string;
-      default: true;
-    };
   }>,
 ): Promise<void> {
-  const config = await defineKloekViteConfig(
-    {
-      command: 'serve',
-      mode: 'development',
-    },
-    {
-      serve: {
-        fullReloadSvelte: flags.fullReloadSvelte,
-      },
-    },
-  );
+  const config = await defineKloekViteConfig({
+    command: 'serve',
+    mode: 'development',
+  });
 
   // Different mode
   if (typeof flags.mode === 'string') {
@@ -82,13 +70,10 @@ export async function kloekBuild(
     };
   }>,
 ): Promise<void> {
-  const config = await defineKloekViteConfig(
-    {
-      command: 'build',
-      mode: 'production',
-    },
-    {},
-  );
+  const config = await defineKloekViteConfig({
+    command: 'build',
+    mode: 'production',
+  });
 
   // Empty out the Output dir before building?
   if (flags.emptyOutDir !== undefined) {

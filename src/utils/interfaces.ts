@@ -7,6 +7,7 @@ export type ImageQualityConfig = {
 
 export type KloekViteDevConfig = {
   serveParams: string;
+  fullReloadSvelte?: boolean;
   cors?: boolean;
   https?: boolean;
 };
@@ -24,7 +25,6 @@ export type KloekViteBuildConfig = {
   analyzeBundle?: boolean;
   sourceMaps?: boolean | 'inline' | 'hidden';
   createZip?: boolean;
-  fullReloadSvelte?: boolean;
 };
 
 export type KloekViteConfig = {
@@ -74,14 +74,14 @@ export type ViteOptions = {
     version: string;
     name: string;
     description: string;
-  }
+  };
   environment: ConfigEnv;
   settings: GamesSettingsData;
   config: KloekViteConfig;
 };
 
 export type PackageConfig = {
-  vite:KloekViteConfig;
+  vite: KloekViteConfig;
   settings: PackageGamesSettings;
   browserslist: string | string[];
   version: string;

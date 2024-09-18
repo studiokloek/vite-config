@@ -15,18 +15,7 @@ import type {ViteOptions} from './utils/interfaces';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-export type KloekConfigServeSettings = {
-  fullReloadSvelte?: boolean;
-};
-
-export type KloekConfigSettings = {
-  serve?: KloekConfigServeSettings;
-};
-
-export async function defineKloekViteConfig(
-  environment: ConfigEnv,
-  settings: KloekConfigSettings,
-): Promise<UserConfig> {
+export async function defineKloekViteConfig(environment: ConfigEnv): Promise<UserConfig> {
   const package_ = getPackageConfig();
 
   const options: ViteOptions = {
@@ -115,7 +104,12 @@ export async function defineKloekViteConfig(
         https: options.config.dev.https ?? true,
         open: getPageToServe(options.config, options.settings.games),
       };
-      config.plugins = [...(config.plugins ? config.plugins : []), ...servePlugins(settings.serve)];
+      config.plugins = [
+        ...(config.plugins ? config.plugins : []),
+        ...servePlugins({
+          fullReloadSvelte: package_.vite.dev.fullReloadSvelte ?? true,
+        }),
+      ];
 
       break;
     }

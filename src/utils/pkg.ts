@@ -1,16 +1,16 @@
 import path from 'node:path';
-import { cwd, readJSON } from '.';
-import { KloekViteConfig, PackageConfig, PackageGamesSettings } from './interfaces';
+import {type KloekViteConfig, type PackageConfig, type PackageGamesSettings} from './interfaces';
+import {cwd, readJSON} from '.';
 
-const pkg = readJSON(path.resolve(cwd, 'package.json')) as Record<string,unknown>;
+const package_ = readJSON(path.resolve(cwd, 'package.json')) as Record<string, unknown>;
 
-const config:PackageConfig = {
-  vite: pkg.vite as KloekViteConfig,
-  browserslist: pkg.browserslist as string | string[],
-  settings: pkg.settings as PackageGamesSettings,
-  version: pkg.version as string,
-  name: pkg.name as string,
-  description: pkg.description as string,
+const config: PackageConfig = {
+  vite: package_.vite as KloekViteConfig,
+  browserslist: package_.browserslist as string | string[],
+  settings: package_.settings as PackageGamesSettings,
+  version: package_.version as string,
+  name: package_.name as string,
+  description: package_.description as string,
 };
 
 export function getPackageConfig(): PackageConfig {
