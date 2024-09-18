@@ -1,6 +1,5 @@
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {type AnyFlags} from 'meow';
 import type {ConfigEnv, UserConfig} from 'vite';
 import {basePlugins} from './plugins/base';
 import {buildPlugins} from './plugins/build';
@@ -16,11 +15,15 @@ import type {ViteOptions} from './utils/interfaces';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-export type KloekConfigSettings = {
-  fullReloadSvelte: boolean;
+export type KloekConfigServeSettings = {
+  fullReloadSvelte?: boolean;
 };
 
-export async function defineKloekViteConfig<F extends AnyFlags>(
+export type KloekConfigSettings = {
+  serve?: KloekConfigServeSettings;
+};
+
+export async function defineKloekViteConfig(
   environment: ConfigEnv,
   settings: KloekConfigSettings,
 ): Promise<UserConfig> {
@@ -112,7 +115,7 @@ export async function defineKloekViteConfig<F extends AnyFlags>(
         https: options.config.dev.https ?? true,
         open: getPageToServe(options.config, options.settings.games),
       };
-      config.plugins = [...(config.plugins ? config.plugins : []), ...servePlugins(settings)];
+      config.plugins = [...(config.plugins ? config.plugins : []), ...servePlugins(settings.serve)];
 
       break;
     }

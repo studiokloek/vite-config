@@ -1,14 +1,14 @@
 import path from 'node:path';
 import {type Plugin, type PluginOption} from 'vite';
+import checker from 'vite-plugin-checker';
 import fullReload from 'vite-plugin-full-reload';
 import mkcert from 'vite-plugin-mkcert';
-import checker from 'vite-plugin-checker';
+import {type KloekConfigServeSettings} from '../config';
 import {cwd} from '../utils';
-import {type KloekConfigSettings} from '../config';
 
-export function servePlugins(settings: KloekConfigSettings): Array<Plugin | PluginOption> {
+export function servePlugins(settings?: KloekConfigServeSettings): Array<Plugin | PluginOption> {
   const fullReloadPaths = ['script/**/*.ts'];
-  if (settings.fullReloadSvelte) {
+  if (settings?.fullReloadSvelte) {
     fullReloadPaths.push('svelte/**/*.svelte');
   }
 

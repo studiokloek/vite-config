@@ -23,7 +23,9 @@ export async function kloekDevelopment(
       mode: 'development',
     },
     {
-      fullReloadSvelte: flags.fullReloadSvelte,
+      serve: {
+        fullReloadSvelte: flags.fullReloadSvelte,
+      },
     },
   );
 
@@ -80,10 +82,13 @@ export async function kloekBuild(
     };
   }>,
 ): Promise<void> {
-  const config = await defineKloekViteConfig({
-    command: 'build',
-    mode: 'production',
-  });
+  const config = await defineKloekViteConfig(
+    {
+      command: 'build',
+      mode: 'production',
+    },
+    {},
+  );
 
   // Empty out the Output dir before building?
   if (flags.emptyOutDir !== undefined) {
