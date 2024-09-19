@@ -92,12 +92,12 @@
     "prettier-package-json": "^2.8.0",
     "prettier-plugin-svelte": "^3.2.6",
     "rollup-plugin-visualizer": "^5.12.0",
-    "sass": "1.79.1",
+    "sass": "1.77.8",
     "stylelint": "^15.11.0",
     "svelte": "^3.59.2",
     "svelte-preprocess": "^5.1.4",
     "terser": "^5.33.0",
-    "vite": "v4.5.5",
+    "vite": "v4.5.3",
     "vite-plugin-banner": "0.7.1",
     "vite-plugin-checker": "^0.8.0",
     "vite-plugin-full-reload": "^1.2.0",
@@ -128,7 +128,7 @@
   "resolutions": {
     "@types/estree": "^1.0.6",
     "@types/node": "^20.16.5",
-    "vite": "v4.5.5"
+    "vite": "v4.5.3"
   },
   "volta": {
     "node": "20.17.0",
