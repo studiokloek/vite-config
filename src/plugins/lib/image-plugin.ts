@@ -1,7 +1,7 @@
 import path from 'node:path';
 import type {ConfigEnv, Plugin} from 'vite';
 import viteImagemin from '@vheemstra/vite-plugin-imagemin';
-import imageminMozjpeg from 'imagemin-mozjpeg';
+import imageminMozJpeg from 'imagemin-mozjpeg';
 import type {ImageQualityConfig} from '../../utils/interfaces';
 import {cwd, readJSON} from '../../utils';
 import {md5} from '../../utils/hash';
@@ -29,7 +29,7 @@ export function imageminPlugin(
     root: path.join(path.resolve(cwd), 'public'),
     plugins: {
       jpg: [
-        imageminMozjpeg({
+        imageminMozJpeg({
           quality: options.jpeg ?? 80,
         }),
       ],

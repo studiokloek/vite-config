@@ -1,3 +1,4 @@
+import { OutputAsset } from 'rollup';
 import type {Plugin, ResolvedConfig} from 'vite';
 import type {GameSettings, GamesSettings} from '../../utils/interfaces';
 
@@ -52,7 +53,7 @@ export function manifestPlugin(games: GamesSettings): Plugin {
           name: undefined,
           source: renderGameManifest(pageId, settings, config),
           fileName: `${pageId}.webmanifest`,
-        };
+        } as OutputAsset;
 
         bundle[`${pageId}-serviceworker.js`] = {
           needsCodeReference: false,
@@ -60,7 +61,7 @@ export function manifestPlugin(games: GamesSettings): Plugin {
           name: undefined,
           source: "self.addEventListener('fetch', function() { return; });",
           fileName: `${pageId}-serviceworker.js`,
-        };
+        } as OutputAsset;
       }
     },
   };

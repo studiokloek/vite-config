@@ -47,7 +47,6 @@ export async function defineKloekViteConfig(environment: ConfigEnv): Promise<Use
 
     resolve: {
       alias: {
-        lodash: 'lodash-es',
         '@meta': path.resolve(cwd, 'source', 'static', 'meta'),
         '@fonts': path.resolve(cwd, 'source', 'static', 'fonts'),
       },
@@ -68,8 +67,8 @@ export async function defineKloekViteConfig(environment: ConfigEnv): Promise<Use
         'fontfaceobserver',
         'gsap',
         'howler',
-        'lodash-decorators-esm',
-        'lodash-es',
+        'lodash-decorators',
+        'lodash',
         'overmind',
         'pixi-spine',
         'pixi',
