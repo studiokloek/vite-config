@@ -87,6 +87,7 @@ export async function defineKloekViteConfig(environment: ConfigEnv): Promise<Use
       preprocessorOptions: {
         scss: {
           charset: false,
+          silenceDeprecations: ['legacy-js-api'],
           // AdditionalData: `@charset "UTF-8"`,
         },
       },
