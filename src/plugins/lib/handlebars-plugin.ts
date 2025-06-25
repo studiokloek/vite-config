@@ -1,57 +1,57 @@
-import os from 'node:os';
-import path from 'node:path';
-import type {Plugin} from 'vite';
-import viteHandlebarsPlugin from 'vite-plugin-handlebars';
-import type {ViteOptions} from '../../utils/interfaces';
-import {getPageIdFromUrl} from '../../utils';
+import viteHandlebarsPlugin, { type HandlebarsContext } from '@yoichiro/vite-plugin-handlebars';
+import type { Plugin } from 'vite';
+import { getPageIdFromUrl } from '../../utils';
+import type { ViteOptions } from '../../utils/interfaces';
 
 // Helpers voor handlebars
-export function handlebarsPlugin(
-  partialDirectory: string | string[],
-  options: ViteOptions,
-): Plugin {
-  return viteHandlebarsPlugin({
-    partialDirectory,
+export function handlebarsPlugin(partialsDirectoryPaths: string | string[], options: ViteOptions): Plugin[] {
+    const dirs = Array.isArray(partialsDirectoryPaths) ? partialsDirectoryPaths : [partialsDirectoryPaths];
 
-    helpers: {
-      json: (object: any, indent = 0) =>
-        JSON.stringify(object, undefined, indent),
-      concat: (...arguments_: any[]) => arguments_.slice(0, -1).join(''),
-      eq: (a: any, b: any) => a === b,
-      neq: (a: any, b: any) => a !== b,
-      isdefined: (value: undefined) => value !== undefined,
-      'resolve-root'(p: string) {
-        // Tijdelijke hack voor bug in handlebars plugin
-        // zie ook https://github.com/alexlafroscia/vite-plugin-handlebars/pull/129
-        const resolvedPath = path.resolve(options.root, p);
-        return os.platform() === 'win32' ? `/${resolvedPath}` : resolvedPath;
-      },
-    },
+    return dirs.map((partialsDirectoryPath) => {
+        return viteHandlebarsPlugin({
+            partialsDirectoryPath,
 
-    context(pagePath: string): Record<string, unknown> {
-      const gameId = getPageIdFromUrl(pagePath);
+            transformIndexHtmlOptions: {
+                helpers: {
+                    json: (object: any, indent = 0) => JSON.stringify(object, undefined, indent),
+                    concat: (...arguments_: any[]) => arguments_.slice(0, -1).join(''),
+                    eq: (a: any, b: any) => a === b,
+                    neq: (a: any, b: any) => a !== b,
+                    isdefined: (value: undefined) => value !== undefined,
+                    // 'resolve-root'(p: string) {
+                    //     // Tijdelijke hack voor bug in handlebars plugin
+                    //     // zie ook https://github.com/alexlafroscia/vite-plugin-handlebars/pull/129
+                    //     const resolvedPath = path.resolve(options.root, p);
+                    //     return os.platform() === 'win32' ? `/${resolvedPath}` : resolvedPath;
+                    // },
+                },
 
-      if (!gameId) {
-        return {};
-      }
+                context: ((pagePath: string): Record<string, unknown> => {
+                    const gameId = getPageIdFromUrl(pagePath);
 
-      if (gameId === 'development') {
-        // Pagina settings teruggeven
-        return {
-          env: options.environment,
-          data: options.settings.development,
-          games: options.settings.games,
-        };
-      }
+                    if (!gameId) {
+                        return {};
+                    }
 
-      // Op basis van pad data bepalen
-      const settings = options.settings.games[gameId];
+                    if (gameId === 'development') {
+                        // Pagina settings teruggeven
+                        return {
+                            env: options.environment,
+                            data: options.settings.development,
+                            games: options.settings.games,
+                        };
+                    }
 
-      // Pagina settings teruggeven
-      return {
-        env: options.environment,
-        data: settings ?? {},
-      };
-    },
-  });
+                    // Op basis van pad data bepalen
+                    const settings = options.settings.games[gameId];
+
+                    // Pagina settings teruggeven
+                    return {
+                        env: options.environment,
+                        data: settings ?? {},
+                    };
+                }) as HandlebarsContext,
+            },
+        });
+    });
 }

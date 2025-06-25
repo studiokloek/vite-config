@@ -1,18 +1,18 @@
 import path from 'node:path';
-import {type KloekViteConfig, type PackageConfig, type PackageGamesSettings} from './interfaces';
-import {cwd, readJSON} from '.';
+import { cwd, readJSON } from '.';
+import type { KloekViteConfig, PackageConfig, PackageGamesSettings } from './interfaces';
 
 const package_ = readJSON(path.resolve(cwd, 'package.json')) as Record<string, unknown>;
 
 const config: PackageConfig = {
-  vite: package_.vite as KloekViteConfig,
-  browserslist: package_.browserslist as string | string[],
-  settings: package_.settings as PackageGamesSettings,
-  version: package_.version as string,
-  name: package_.name as string,
-  description: package_.description as string,
+    vite: package_.vite as KloekViteConfig,
+    browserslist: package_.browserslist as string | string[],
+    settings: package_.settings as PackageGamesSettings,
+    version: package_.version as string,
+    name: package_.name as string,
+    description: package_.description as string,
 };
 
 export function getPackageConfig(): PackageConfig {
-  return config;
+    return config;
 }
