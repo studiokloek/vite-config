@@ -1,0 +1,44 @@
+{
+    "$schema": "https://biomejs.dev/schemas/2.0.5/schema.json",
+    "vcs": {
+        "enabled": true,
+        "clientKind": "git",
+        "useIgnoreFile": true
+    },
+    "files": {
+        "includes": [
+            "src/**/*"
+        ],
+        "ignoreUnknown": true
+    },
+    "formatter": {
+        "enabled": true,
+        "indentStyle": "space",
+        "indentWidth": 4,
+        "lineWidth": 120
+    },
+    "javascript": {
+        "formatter": {
+            "quoteStyle": "single"
+        },
+        "globals": []
+    },
+    "linter": {
+        "rules": {
+            "recommended": true,
+            "style": {
+                "recommended": true,
+                "useTemplate": {
+                    "level": "warn",
+                    "fix": "safe" // the code fix for `useTemplate` is now considered safe
+                }
+            }
+        }
+    },
+    "assist": {
+        "enabled": true,
+        "actions": {
+            "recommended": true
+        }
+    }
+}
