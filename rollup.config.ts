@@ -6,7 +6,6 @@ import typescript from '@rollup/plugin-typescript';
 import type {RollupOptions} from 'rollup';
 import {defineConfig} from 'rollup';
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 const pkg = JSON.parse(
   readFileSync(new URL('package.json', import.meta.url)).toString(),
 );
