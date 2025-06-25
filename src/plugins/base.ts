@@ -5,7 +5,7 @@ import type { Plugin, PluginOption } from 'vite';
 import tsconfigPathsPlugin from 'vite-tsconfig-paths';
 import { cwd } from '../utils';
 import type { ViteOptions } from '../utils/interfaces';
-import { handlebarsPlugin } from './lib/handlebars-plugin';
+import { handlebarsPlugin } from './lib/handlebars/handlebars-plugin';
 import { htmlPlugin } from './lib/html-plugin';
 
 export function basePlugins(options: ViteOptions): Array<Plugin | PluginOption> {
