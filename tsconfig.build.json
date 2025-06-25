@@ -1,28 +1,23 @@
 {
   "compilerOptions": {
     "moduleResolution": "node",
-
     "target": "ES2020",
     "module": "ESNext",
-
     "baseUrl": "src",
     "rootDir": "src",
     "outDir": "dist",
-
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
     "skipLibCheck": true,
-
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "verbatimModuleSyntax": true,
     "importsNotUsedAsValues": "remove",
     "allowSyntheticDefaultImports": true,
-
     "declaration": true,
     "pretty": true,
     "removeComments": false,
-
     "strict": true,
     "noImplicitOverride": true,
     "useUnknownInCatchVariables": false,
@@ -36,10 +31,15 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
     "noImplicitAny": true,
-
-    "typeRoots": ["./types"]
+    "typeRoots": [
+      "./types"
+    ]
   },
-
-  "exclude": ["node_modules", "dist"],
-  "include": ["**/*.ts"]
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
+  "include": [
+    "**/*.ts"
+  ]
 }

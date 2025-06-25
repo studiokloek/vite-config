@@ -5,7 +5,10 @@
     "module": "ESNext",
     "esModuleInterop": true,
     "resolveJsonModule": true,
+    "verbatimModuleSyntax": true,
     "strict": false
   },
-  "include": ["./rollup.config.ts"]
+  "include": [
+    "./rollup.config.ts"
+  ]
 }
