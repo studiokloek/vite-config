@@ -5,6 +5,7 @@ import {nodeResolve} from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
 import type {RollupOptions} from 'rollup';
 import {defineConfig} from 'rollup';
+import copy from 'rollup-plugin-copy'
 
 const pkg = JSON.parse(
   readFileSync(new URL('package.json', import.meta.url)).toString(),
@@ -59,6 +60,11 @@ const config = (commandLineArgs: RollupOptions): RollupOptions => {
         inlineSourceMap: true,
         inlineSources: true,
       }),
+        copy({
+      targets: [
+        { src: 'src/partials/*', dest: 'dist/partials' },
+      ]
+    })
     ],
   });
 };
