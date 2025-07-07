@@ -49,66 +49,37 @@
   "publishConfig": {
     "access": "public"
   },
-  "xo": {
-    "prettier": true,
-    "rules": {
-      "import/extensions": [
-        1,
-        {
-          "ts": "never"
-        }
-      ],
-      "n/prefer-global/process": [
-        "error",
-        "always"
-      ]
-    }
-  },
   "dependencies": {
     "@sveltejs/vite-plugin-svelte": "^2.5.3",
-    "@typescript-eslint/eslint-plugin": "^6.21.0",
-    "@typescript-eslint/parser": "^6.21.0",
     "@vheemstra/vite-plugin-imagemin": "^1.2.1",
     "@vitejs/plugin-legacy": "^4.1.1",
-    "eslint": "^8.57.1",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-formatter-pretty": "^5.0.0",
-    "eslint-import-resolver-typescript": "^3.10.1",
-    "eslint-plugin-eslint-comments": "^3.2.0",
-    "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-prettier": "^5.4.1",
-    "eslint-plugin-promise": "^6.6.0",
-    "eslint-plugin-svelte": "^2.46.1",
-    "eslint-plugin-unicorn": "^48.0.1",
     "filenamify": "^6.0.0",
     "imagemin-mozjpeg": "^10.0.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-pngquant": "^9.0.2",
     "meow": "12.0.1",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.5.5",
+    "postcss": "^8.5.6",
     "postcss-load-config": "^4.0.2",
-    "prettier": "^3.5.3",
-    "prettier-package-json": "^2.8.0",
-    "prettier-plugin-svelte": "^3.4.0",
     "rollup-plugin-visualizer": "^5.14.0",
     "sass": "1.89.2",
     "stylelint": "^15.11.0",
     "svelte": "^3.59.2",
     "svelte-preprocess": "^5.1.4",
-    "terser": "^5.42.0",
+    "terser": "^5.43.1",
     "vite": "v4.5.14",
     "vite-plugin-banner": "0.8.1",
     "vite-plugin-checker": "^0.9.3",
     "vite-plugin-full-reload": "^1.2.0",
     "vite-plugin-handlebars": "naranjamecanica/vite-plugin-handlebars#tmp-release",
     "vite-plugin-html": "3.2.2",
-    "vite-plugin-live-reload": "^3.0.4",
+    "vite-plugin-live-reload": "^3.0.5",
     "vite-plugin-mkcert": "1.17.8",
     "vite-tsconfig-paths": "^4.3.2",
     "zip-a-folder": "^3.1.9"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.0.6",
     "@microsoft/api-extractor": "7.52.8",
     "@rollup/plugin-node-resolve": "^15.3.1",
     "@rollup/plugin-typescript": "^11.1.6",
@@ -121,9 +92,8 @@
     "@types/imagemin-optipng": "^5.2.4",
     "@types/node": "^20.19.0",
     "rimraf": "^5.0.10",
-    "rollup": "^4.43.0",
-    "typescript": "4.9.5",
-    "xo": "0.58.0"
+    "rollup": "^4.44.2",
+    "typescript": "4.9.5"
   },
   "resolutions": {
     "@types/estree": "^1.0.8",
@@ -133,7 +103,7 @@
     "rollup": "^4.43.0"
   },
   "volta": {
-    "node": "20.19.2",
+    "node": "20.19.3",
     "yarn": "1.22.22"
   }
 }

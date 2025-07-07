@@ -1,9 +1,9 @@
 import path from 'node:path';
-import {type Plugin, type PluginOption} from 'vite';
+import { type Plugin, type PluginOption } from 'vite';
 import checker from 'vite-plugin-checker';
 import fullReload from 'vite-plugin-full-reload';
 import mkcert from 'vite-plugin-mkcert';
-import {cwd} from '../utils';
+import { cwd } from '../utils';
 
 export type KloekConfigServeSettings = {
   fullReloadSvelte?: boolean;
@@ -26,6 +26,7 @@ export function servePlugins(settings?: KloekConfigServeSettings): Array<Plugin 
 
     checker({
       typescript: true,
+      biome: true,
     }),
   ];
 }
