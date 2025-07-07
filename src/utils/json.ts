@@ -1,4 +1,4 @@
-import {readFileSync} from 'node:fs';
+import { readFileSync } from 'node:fs';
 
 export function readJSON(path: string): unknown {
   try {

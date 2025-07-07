@@ -1,21 +1,17 @@
 import os from 'node:os';
 import path from 'node:path';
-import type {Plugin} from 'vite';
+import type { Plugin } from 'vite';
 import viteHandlebarsPlugin from 'vite-plugin-handlebars';
-import type {ViteOptions} from '../../utils/interfaces';
-import {getPageIdFromUrl} from '../../utils';
+import type { ViteOptions } from '../../utils/interfaces';
+import { getPageIdFromUrl } from '../../utils';
 
 // Helpers voor handlebars
-export function handlebarsPlugin(
-  partialDirectory: string | string[],
-  options: ViteOptions,
-): Plugin {
+export function handlebarsPlugin(partialDirectory: string | string[], options: ViteOptions): Plugin {
   return viteHandlebarsPlugin({
     partialDirectory,
 
     helpers: {
-      json: (object: any, indent = 0) =>
-        JSON.stringify(object, undefined, indent),
+      json: (object: any, indent = 0) => JSON.stringify(object, undefined, indent),
       concat: (...arguments_: any[]) => arguments_.slice(0, -1).join(''),
       eq: (a: any, b: any) => a === b,
       neq: (a: any, b: any) => a !== b,

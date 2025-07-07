@@ -1,18 +1,7 @@
 import path from 'node:path';
-import type {
-  GameSettings,
-  GameSettingsProperty,
-  GamesSettings,
-  GamesSettingsData,
-  KloekViteConfig,
-  PackageGamesSettings,
-} from './interfaces';
+import type { GameSettings, GameSettingsProperty, GamesSettings, GamesSettingsData, KloekViteConfig, PackageGamesSettings } from './interfaces';
 
-function mergeGameSettings(
-  generic: GameSettings,
-  game: GameSettings,
-  infoTypes: GameSettingsProperty[],
-): GameSettings {
+function mergeGameSettings(generic: GameSettings, game: GameSettings, infoTypes: GameSettingsProperty[]): GameSettings {
   const settings: Record<string, unknown> = {};
 
   // Alle props op één level diep mergen
@@ -26,15 +15,10 @@ function mergeGameSettings(
   return settings as unknown as GameSettings;
 }
 
-export function parsePackageGamesSettings(
-  packageSettings: PackageGamesSettings,
-  version: string
-): GamesSettingsData {
+export function parsePackageGamesSettings(packageSettings: PackageGamesSettings, version: string): GamesSettingsData {
   // Merge settings
-  const infoTypes = Object.keys(
-    packageSettings.generic,
-  ) as GameSettingsProperty[];
-  const {generic} = packageSettings;
+  const infoTypes = Object.keys(packageSettings.generic) as GameSettingsProperty[];
+  const { generic } = packageSettings;
   const allSettings: GamesSettingsData = {
     development: generic,
     games: {},
@@ -57,10 +41,7 @@ export function parsePackageGamesSettings(
   return allSettings;
 }
 
-export function pathToGameData(
-  fullFilePath: string,
-  settings: GamesSettings,
-): GameSettings | undefined {
+export function pathToGameData(fullFilePath: string, settings: GamesSettings): GameSettings | undefined {
   // Determine filename without extension
   let filePath = path.basename(fullFilePath, path.extname(fullFilePath));
 
@@ -75,18 +56,12 @@ export function pathToGameData(
   return settings[filePath];
 }
 
-export function getPageToServe(
-  config: KloekViteConfig,
-  settings: GamesSettings,
-): string {
+export function getPageToServe(config: KloekViteConfig, settings: GamesSettings): string {
   // Hoeveel pages zijn er?
   const pageIds = Object.keys(settings);
   const page = pageIds.length === 1 ? pageIds[0] : 'development';
 
-  return path.posix.join(
-    config.build.basePath,
-    `${page}.html${config.dev.serveParams ?? ''}`,
-  );
+  return path.posix.join(config.build.basePath, `${page}.html${config.dev.serveParams ?? ''}`);
 }
 
 export function getPageIdFromUrl(url: string): string {

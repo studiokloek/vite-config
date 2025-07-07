@@ -1,6 +1,6 @@
 import path from 'node:path';
-import {type KloekViteConfig, type PackageConfig, type PackageGamesSettings} from './interfaces';
-import {cwd, readJSON} from '.';
+import { type KloekViteConfig, type PackageConfig, type PackageGamesSettings } from './interfaces';
+import { cwd, readJSON } from '.';
 
 const package_ = readJSON(path.resolve(cwd, 'package.json')) as Record<string, unknown>;
 

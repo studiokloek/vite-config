@@ -1,12 +1,12 @@
 import path from 'node:path';
-import {svelte} from '@sveltejs/vite-plugin-svelte';
-import {type Plugin, type PluginOption} from 'vite';
+import { svelte } from '@sveltejs/vite-plugin-svelte';
+import { type Plugin, type PluginOption } from 'vite';
 import tsconfigPathsPlugin from 'vite-tsconfig-paths';
 import sveltePreprocess from 'svelte-preprocess';
-import {type ViteOptions} from '../utils/interfaces';
-import {cwd} from '../utils';
-import {handlebarsPlugin} from './lib/handlebars-plugin';
-import {htmlPlugin} from './lib/html-plugin';
+import { type ViteOptions } from '../utils/interfaces';
+import { cwd } from '../utils';
+import { handlebarsPlugin } from './lib/handlebars-plugin';
+import { htmlPlugin } from './lib/html-plugin';
 
 export function basePlugins(options: ViteOptions): Array<Plugin | PluginOption> {
   return [

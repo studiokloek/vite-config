@@ -18,9 +18,7 @@ export function buildPlugins(options: ViteOptions): Array<Plugin | PluginOption>
 
   if (options.config.build.legacy) {
     // Make sure the page works in older browsers
-    plugins.push(
-      ...legacyPlugin({ targets: (options.config.build.browserslist as string[]) ?? 'defaults' }),
-    );
+    plugins.push(...legacyPlugin({ targets: (options.config.build.browserslist as string[]) ?? 'defaults' }));
   }
 
   const pages = Object.keys(options.settings.games).map((gameId) => {

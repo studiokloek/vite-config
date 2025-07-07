@@ -1,8 +1,8 @@
-import {existsSync, promises} from 'node:fs';
+import { existsSync, promises } from 'node:fs';
 import path from 'node:path';
-import type {ConfigEnv, Plugin, UserConfig, ViteDevServer} from 'vite';
-import type {GamesSettings} from '../../utils/interfaces';
-import {cwd, getPageIdFromUrl} from '../../utils';
+import type { ConfigEnv, Plugin, UserConfig, ViteDevServer } from 'vite';
+import type { GamesSettings } from '../../utils/interfaces';
+import { cwd, getPageIdFromUrl } from '../../utils';
 
 const PAGE_TEMPLATE = '{{> game data=data}}';
 const DEVELOPMENT_TEMPLATE = '{{> development data=data}}';
@@ -48,22 +48,10 @@ export function htmlPlugin(games: GamesSettings): Plugin {
 
           if (pageId === 'development') {
             // Development? geef terug...
-            response.end(
-              await server.transformIndexHtml(
-                url,
-                DEVELOPMENT_TEMPLATE,
-                request.originalUrl,
-              ),
-            );
+            response.end(await server.transformIndexHtml(url, DEVELOPMENT_TEMPLATE, request.originalUrl));
           } else if (Object.keys(games).includes(pageId)) {
             // Bestaande game? zorg er voor dat de template ge-rendered wordt
-            response.end(
-              await server.transformIndexHtml(
-                url,
-                PAGE_TEMPLATE,
-                request.originalUrl,
-              ),
-            );
+            response.end(await server.transformIndexHtml(url, PAGE_TEMPLATE, request.originalUrl));
           } else {
             // Niks gevonden
             response.end();

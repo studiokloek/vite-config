@@ -1,4 +1,4 @@
-import type {ConfigEnv} from 'vite';
+import type { ConfigEnv } from 'vite';
 
 export type ImageQualityConfig = {
   jpeg: number;

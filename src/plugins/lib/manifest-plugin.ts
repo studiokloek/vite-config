@@ -1,12 +1,8 @@
 import { OutputAsset } from 'rollup';
-import type {Plugin, ResolvedConfig} from 'vite';
-import type {GameSettings, GamesSettings} from '../../utils/interfaces';
+import type { Plugin, ResolvedConfig } from 'vite';
+import type { GameSettings, GamesSettings } from '../../utils/interfaces';
 
-function renderGameManifest(
-  pageId: string,
-  settings: GameSettings,
-  config: ResolvedConfig,
-): string {
+function renderGameManifest(pageId: string, settings: GameSettings, config: ResolvedConfig): string {
   const manifest = {
     short_name: `${settings.meta.apptitle}`,
     name: `${settings.meta.title}`,

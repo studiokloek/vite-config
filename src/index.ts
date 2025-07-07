@@ -1,7 +1,7 @@
-import {type TypedFlags} from 'meow';
-import {build, createServer, type LogLevel} from 'vite';
-import {defineKloekViteConfig} from './config';
-import {addBuildFolderToZip, getPackageConfig} from './utils';
+import { type TypedFlags } from 'meow';
+import { build, createServer, type LogLevel } from 'vite';
+import { defineKloekViteConfig } from './config';
+import { addBuildFolderToZip, getPackageConfig } from './utils';
 
 export async function kloekDevelopment(
   flags: TypedFlags<{

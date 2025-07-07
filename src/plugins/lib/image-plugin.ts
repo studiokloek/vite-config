@@ -1,10 +1,10 @@
 import path from 'node:path';
-import type {ConfigEnv, Plugin} from 'vite';
+import type { ConfigEnv, Plugin } from 'vite';
 import viteImagemin from '@vheemstra/vite-plugin-imagemin';
 import imageminMozJpeg from 'imagemin-mozjpeg';
-import type {ImageQualityConfig} from '../../utils/interfaces';
-import {cwd, readJSON} from '../../utils';
-import {md5} from '../../utils/hash';
+import type { ImageQualityConfig } from '../../utils/interfaces';
+import { cwd, readJSON } from '../../utils';
+import { md5 } from '../../utils/hash';
 
 // The minifiers you want to use:
 import imageminPngQuant from 'imagemin-pngquant';
@@ -12,10 +12,7 @@ import imageminOptiPng from 'imagemin-optipng';
 
 const pkg = readJSON(path.resolve(cwd, 'package.json')) as Record<string, unknown>;
 
-export function imageminPlugin(
-  environment: ConfigEnv,
-  options: ImageQualityConfig,
-): Plugin | undefined {
+export function imageminPlugin(environment: ConfigEnv, options: ImageQualityConfig): Plugin | undefined {
   if (environment.mode !== 'production') {
     return;
   }
@@ -25,7 +22,7 @@ export function imageminPlugin(
     verbose: true,
     cache: true,
     cacheDir: path.resolve(cwd, '.cache/vite-plugin-imagemin'),
-    cacheKey: `${pkg.name}-${md5(JSON.stringify({...options}))}`,
+    cacheKey: `${pkg.name}-${md5(JSON.stringify({ ...options }))}`,
     root: path.join(path.resolve(cwd), 'public'),
     plugins: {
       jpg: [

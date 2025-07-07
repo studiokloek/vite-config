@@ -1,17 +1,11 @@
 import path from 'node:path';
-import {fileURLToPath} from 'node:url';
-import type {ConfigEnv, UserConfig} from 'vite';
-import {basePlugins} from './plugins/base';
-import {buildPlugins} from './plugins/build';
-import {servePlugins} from './plugins/serve';
-import {
-  cwd,
-  defineBuildConfig,
-  getPackageConfig,
-  getPageToServe,
-  parsePackageGamesSettings,
-} from './utils';
-import type {ViteOptions} from './utils/interfaces';
+import { fileURLToPath } from 'node:url';
+import type { ConfigEnv, UserConfig } from 'vite';
+import { basePlugins } from './plugins/base';
+import { buildPlugins } from './plugins/build';
+import { servePlugins } from './plugins/serve';
+import { cwd, defineBuildConfig, getPackageConfig, getPageToServe, parsePackageGamesSettings } from './utils';
+import type { ViteOptions } from './utils/interfaces';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -25,7 +19,7 @@ export async function defineKloekViteConfig(environment: ConfigEnv): Promise<Use
     settings: parsePackageGamesSettings(package_.settings, package_.version),
     config: {
       ...package_.vite,
-      build: {...package_.vite.build, browserslist: package_.browserslist},
+      build: { ...package_.vite.build, browserslist: package_.browserslist },
       serve: {
         partials: [path.resolve(__dirname, 'partials'), path.resolve(cwd, 'source', 'partials')],
       },
