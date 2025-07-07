@@ -1,4 +1,4 @@
-import { OutputAsset } from 'rollup';
+import type { OutputAsset } from 'rollup';
 import type { Plugin, ResolvedConfig } from 'vite';
 import type { GameSettings, GamesSettings } from '../../utils/interfaces';
 

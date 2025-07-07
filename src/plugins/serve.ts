@@ -1,5 +1,5 @@
 import path from 'node:path';
-import { type Plugin, type PluginOption } from 'vite';
+import type { Plugin, PluginOption } from 'vite';
 import checker from 'vite-plugin-checker';
 import fullReload from 'vite-plugin-full-reload';
 import mkcert from 'vite-plugin-mkcert';

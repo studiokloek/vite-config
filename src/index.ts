@@ -1,4 +1,4 @@
-import { type TypedFlags } from 'meow';
+import type { TypedFlags } from 'meow';
 import { build, createServer, type LogLevel } from 'vite';
 import { defineKloekViteConfig } from './config';
 import { addBuildFolderToZip, getPackageConfig } from './utils';

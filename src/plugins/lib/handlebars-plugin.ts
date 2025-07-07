@@ -11,10 +11,10 @@ export function handlebarsPlugin(partialDirectory: string | string[], options: V
     partialDirectory,
 
     helpers: {
-      json: (object: any, indent = 0) => JSON.stringify(object, undefined, indent),
-      concat: (...arguments_: any[]) => arguments_.slice(0, -1).join(''),
-      eq: (a: any, b: any) => a === b,
-      neq: (a: any, b: any) => a !== b,
+      json: (object: unknown, indent = 0) => JSON.stringify(object, undefined, indent),
+      concat: (...arguments_: unknown[]) => arguments_.slice(0, -1).join(''),
+      eq: (a: unknown, b: unknown) => a === b,
+      neq: (a: unknown, b: unknown) => a !== b,
       isdefined: (value: undefined) => value !== undefined,
       'resolve-root'(p: string) {
         // Tijdelijke hack voor bug in handlebars plugin

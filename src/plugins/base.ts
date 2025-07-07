@@ -1,9 +1,9 @@
 import path from 'node:path';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
-import { type Plugin, type PluginOption } from 'vite';
+import type { Plugin, PluginOption } from 'vite';
 import tsconfigPathsPlugin from 'vite-tsconfig-paths';
 import sveltePreprocess from 'svelte-preprocess';
-import { type ViteOptions } from '../utils/interfaces';
+import type { ViteOptions } from '../utils/interfaces';
 import { cwd } from '../utils';
 import { handlebarsPlugin } from './lib/handlebars-plugin';
 import { htmlPlugin } from './lib/html-plugin';
