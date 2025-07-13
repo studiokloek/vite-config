@@ -1,3 +1,4 @@
+import { biomePlugin } from '@pbr1111/vite-plugin-biome';
 import path from 'node:path';
 import type { Plugin, PluginOption } from 'vite';
 import checker from 'vite-plugin-checker';
@@ -26,7 +27,8 @@ export function servePlugins(settings?: KloekConfigServeSettings): Array<Plugin 
 
     checker({
       typescript: true,
-      biome: true,
     }),
+
+    biomePlugin(),
   ];
 }
