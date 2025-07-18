@@ -1,6 +1,6 @@
 {
   "name": "@studiokloek/vite-config",
-  "version": "0.12.20",
+  "version": "0.12.21",
   "license": "MIT",
   "author": "Martijn Swart <opensource@studiokloek.nl> (https://studiokloek.nl)",
   "description": "Base Vite config for usage in our projects.",
