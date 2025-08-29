@@ -21,10 +21,14 @@ export function servePlugins(settings?: KloekConfigServeSettings): Array<Plugin 
             always: true,
         }) as Plugin,
 
-        basicSsl(),
+        basicSsl({
+            name: 'Studio Kloek',
+            domains: ['localhost']
+        }),
 
         checker({
             typescript: true,
+            biome: true,
         }),
     ];
 }
