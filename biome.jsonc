@@ -1,5 +1,5 @@
 {
-    "$schema": "https://biomejs.dev/schemas/2.0.5/schema.json",
+    "$schema": "https://biomejs.dev/schemas/2.2.2/schema.json",
     "vcs": {
         "enabled": true,
         "clientKind": "git",
@@ -30,7 +30,8 @@
                 "recommended": true,
                 "useTemplate": {
                     "level": "warn",
-                    "fix": "safe" // the code fix for `useTemplate` is now considered safe
+                    "fix": "safe", // the code fix for `useTemplate` is now considered safe,
+                    "options": {}
                 }
             }
         }
