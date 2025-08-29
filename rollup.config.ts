@@ -21,32 +21,14 @@ const config = (commandLineArgs: RollupOptions): RollupOptions => {
     treeshake: {
       moduleSideEffects: 'no-external',
       propertyReadSideEffects: false,
-      tryCatchDeoptimization: false,
+      tryCatchDeoptimization: false,      
     },
     onwarn(warning, warn) {
-      // Node-resolve complains a lot about this but seems to still work?
-      if (warning.message.includes('Package subpath')) {
-        return;
-      }
-
-      // We use the eval('require') trick to deal with optional deps
-      if (warning.message.includes('Use of eval')) {
-        return;
-      }
-
-      if (warning.message.includes('Circular dependency')) {
-        return;
-      }
-
       warn(warning);
     },
     input: path.resolve(__dirname, 'src/index.ts'),
     output: {
       file: path.resolve(__dirname, 'dist/index.js'),
-      // Exports: 'named',
-      // format: 'esm',
-      // externalLiveBindings: false,
-      // // Freeze: false,
       sourcemap: 'inline',
     },
     external: [
@@ -60,10 +42,10 @@ const config = (commandLineArgs: RollupOptions): RollupOptions => {
         inlineSourceMap: true,
         inlineSources: true,
       }),
-        copy({
-      targets: [
-        { src: 'src/partials/*', dest: 'dist/partials' },
-      ]
+      copy({
+        targets: [
+          { src: 'src/partials/*', dest: 'dist/partials' },
+        ]
     })
     ],
   });
