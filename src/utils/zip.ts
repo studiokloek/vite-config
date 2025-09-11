@@ -2,8 +2,8 @@ import { mkdir, unlink } from 'node:fs/promises';
 import path from 'node:path';
 import filenamify from 'filenamify';
 import { zip } from 'zip-a-folder';
-import { getPackageConfig } from './pkg';
 import { cwd } from './cwd';
+import { getPackageConfig } from './pkg';
 
 export async function addBuildFolderToZip(): Promise<void> {
     const pkg = getPackageConfig();
