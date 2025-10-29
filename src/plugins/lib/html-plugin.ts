@@ -39,7 +39,7 @@ export function htmlPlugin(games: GamesSettings): Plugin {
             return () => {
                 // Zorg er voor dat tijdens development de pagina ge-rendered terug gegeven wordt wordt
                 server.middlewares.use('/', async (request, response, next) => {
-                    const url = request?.url ?? '';
+                    const url = request?.originalUrl ?? '';
                     const pageId = getPageIdFromUrl(url);
 
                     if (!pageId) {
