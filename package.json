@@ -1,6 +1,6 @@
 {
   "name": "@studiokloek/vite-config",
-  "version": "0.13.0-7",
+  "version": "0.13.0-8",
   "type": "module",
   "license": "MIT",
   "author": "Martijn Swart <opensource@studiokloek.nl> (https://studiokloek.nl)",
