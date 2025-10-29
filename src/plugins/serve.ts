@@ -1,8 +1,8 @@
 import path from 'node:path';
-import mkcert from 'vite-plugin-mkcert'
 import type { Plugin, PluginOption } from 'vite';
 import checker from 'vite-plugin-checker';
 import { default as fullReload } from 'vite-plugin-full-reload';
+import mkcert from 'vite-plugin-mkcert';
 import { cwd } from '../utils';
 
 export type KloekConfigServeSettings = {
