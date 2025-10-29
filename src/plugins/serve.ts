@@ -1,5 +1,5 @@
 import path from 'node:path';
-import basicSsl from '@vitejs/plugin-basic-ssl';
+import mkcert from 'vite-plugin-mkcert'
 import type { Plugin, PluginOption } from 'vite';
 import checker from 'vite-plugin-checker';
 import { default as fullReload } from 'vite-plugin-full-reload';
@@ -21,10 +21,7 @@ export function servePlugins(settings?: KloekConfigServeSettings): Array<Plugin 
             always: true,
         }) as Plugin,
 
-        basicSsl({
-            name: 'Studio Kloek',
-            domains: ['localhost'],
-        }),
+        mkcert(),
 
         checker({
             typescript: true,

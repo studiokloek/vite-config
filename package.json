@@ -52,7 +52,6 @@
   "dependencies": {
     "@sveltejs/vite-plugin-svelte": "^6.2.1",
     "@vheemstra/vite-plugin-imagemin": "^2.2.1",
-    "@vitejs/plugin-basic-ssl": "^2.1.0",
     "@vitejs/plugin-legacy": "^7.2.1",
     "filenamify": "^6.0.0",
     "handlebars": "^4.7.8",
@@ -75,7 +74,7 @@
     "vite-plugin-full-reload": "^1.2.0",
     "vite-plugin-html": "3.2.2",
     "vite-plugin-live-reload": "^3.0.5",
-    "vite-plugin-mkcert": "1.17.9",
+    "vite-plugin-mkcert": "^1.17.9",
     "vite-tsconfig-paths": "^5.1.4",
     "zip-a-folder": "^3.1.9"
   },
